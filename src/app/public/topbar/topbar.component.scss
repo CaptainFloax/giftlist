@@ -1,0 +1,15 @@
+@use '../../../styles.scss';
+
+.top-bar{
+    .titles{
+        h1{
+            color: styles.color(neutral, 800);
+            margin: 0;
+        }
+
+        p{
+            margin: styles.$s-a 0;
+            color: styles.color(neutral, 600);
+        }
+    }
+}

@@ -44,13 +44,13 @@ export class SidebarComponent implements OnInit {
   navigationItems: any = [
       {
         name: "Accueil",
-        link: "/",
+        link: "home",
         icon: "tutute.svg",
         child: false
       },
       {
         name: "Liste de naissance",
-        link: "need",
+        link: "lists",
         icon: "fashion.svg",
         child: true
       },
