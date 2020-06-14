@@ -1,0 +1,26 @@
+{
+    "products": [
+        {
+            "id": "001",
+            "img": "001.png",
+            "name": "Produit 1",
+            "description": "Lorem Ipsum dolor sit amet",
+            "price": "12,3",
+            "get": true,
+            "cat": ["all","bath","security","dodo","games","meal","clothes","others"],
+            "link": "https://google.com",
+            "participation": false
+        },
+        {
+            "id": "001",
+            "img": "001.png",
+            "name": "Produit 1",
+            "description": "Lorem Ipsum dolor sit amet",
+            "price": "12,3",
+            "get": true,
+            "cat": ["all","bath","security","dodo","games","meal","clothes","others"],
+            "link": "https://google.com",
+            "participation": false
+        }
+    ]
+}
