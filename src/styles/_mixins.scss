@@ -1,0 +1,13 @@
+@use 'variables';
+
+@mixin resetList {
+    padding: 0;
+    margin: 0;
+    > li{
+        list-style-type: none;
+    }
+}
+
+@mixin addShadow($level){
+    box-shadow: map-get(variables.$shadows-levels, 1);
+}

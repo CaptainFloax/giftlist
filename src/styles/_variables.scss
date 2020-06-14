@@ -1,8 +1,18 @@
 $sidebar-h: 250px;
 
+// FONT VARIABLES
+$font-size: 16px;
+
 // Atomic Spacement by default
 // Values : Atoms, Molecules, Organisms
 // Use this spacement for padding and for margin
-$s-a: 4px;
-$s-m: 8px;
-$s-o: 16px;
+$s-a: 8px;
+$s-m: 16px;
+$s-o: 32px;
+
+// SHADOW LEVELS
+$shadows-levels:(
+    1: 2px 0 16px hsla(0, 0, 10, 0.05),
+    2: 4px 0 16px hsla(0, 0, 10, 0.05),
+    3: 6px 0 16px hsla(0, 0, 10, 0.05),
+)
