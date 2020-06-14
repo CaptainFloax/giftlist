@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/theming';
+@use 'styles/functions';
+@use 'styles/variables';
+@use 'styles/mixins';
+
+@forward 'styles/theming';
+@forward 'styles/functions';
+@forward 'styles/variables';
+@forward 'styles/mixins';
+
+html, body{
+    background-color: theming.color(neutral, 0);
+    padding: 0;
+    margin: 0;
+}

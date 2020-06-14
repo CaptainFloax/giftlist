@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Giftlist"
+    }
+  },
+  "defaultProject": "Giftlist",
+  "cli": {
+    "analytics": false
+  }
 }

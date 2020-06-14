@@ -1,0 +1,8 @@
+@use 'theme/palettes';
+
+@forward 'theme/colors';
+@forward 'theme/palettes';
+
+@function color($color: 'neutral', $tone: '500') {
+    @return map-get(map-get(palettes.$palettes, $color), $tone);
+}

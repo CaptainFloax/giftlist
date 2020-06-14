@@ -1,0 +1,45 @@
+$tone500: 50 !default;
+
+$tones: (
+    0 : 98,
+    100 : 95,
+    200 : 90,
+    300: 85,
+    400: 80,
+    500: $tone500,
+    600: 40,
+    700: 35,
+    800: 30,
+    900: 25,
+    1000: 10
+) !default;
+
+$palette: (
+    primary: (
+        h: 224,
+        s: 47
+    ),
+    secondary: (
+        h: 357,
+        s: 90
+    ),
+    accent: (
+        h: 39,
+        s: 93
+    ),
+    neutral: (
+        h: 230,
+        s: 15
+    )
+) !default;
+
+$states : (
+    success: (
+        h: 160,
+        s: 100
+    ),
+    danger: (
+        h: 6,
+        s: 100
+    )
+) !default;
