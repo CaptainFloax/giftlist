@@ -2,4 +2,111 @@
 
 .lists-container{
     padding: styles.$s-o;
+    max-width: 100%;
+    max-height: 100%;
+
+    .l-filters{
+        margin: 40px 0 20px 0;
+        .f-cat{
+            display: flex;
+            @include styles.resetList();
+            li{
+                margin: 0 10px;
+                padding: 5px 10px;
+                font-size: 0.8rem;
+
+                &.active{
+                    color: styles.color(primary, 600);
+                    background-color: styles.color(primary,100);
+                }
+
+                &:first-child{
+                    margin-left: 0;;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .l-products{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media screen and (max-width: 700px){grid-template-columns: 1fr;}
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-auto-flow: row dense;
+        max-width: 100%;
+        
+        .lp-card{
+            min-height: 70px;
+            min-width: 70px;
+            display: flex;
+            align-items: center;
+            max-width: 350px;
+
+            @each $key, $value in styles.$categories{
+                .#{$key}{
+                    background: styles.colorcat($key, 100);
+                    color: styles.colorcat($key, 500);
+                }
+            }
+
+            .pc-cat{
+                min-height: 50px;
+                min-width: 50px;
+                border-radius: 10px;
+
+                i{
+                    font-size: 20px;
+                    margin: 15px 0 0 15px;
+                }
+            }
+
+            .pc-content{
+                margin-left: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+
+                .pcc-text{
+                    min-width: 150px;
+                    .ct-name{
+                        margin: 0;
+                        color: styles.color(primary, 800);
+                        font-weight: 600;
+                    }
+
+                    .ct-desc{
+                        margin: 0;
+                        font-size: 0.8rem;
+                        color: styles.color(neutral, 500);
+                    }
+                }
+
+                .pcc-amount{
+                    margin-left: 20px;
+                    text-align: right;
+
+                    p{
+                        margin: 0;
+                    }
+
+                    .ca-cat{
+                        font-size: 0.6rem;
+                        color: styles.color(neutral, 500);
+                    }
+
+                    .ca-price{
+                        font-size: 1.1em;
+                        color: styles.color(primary, 600)
+                    }
+                }
+                
+            }
+        }
+    }
 }

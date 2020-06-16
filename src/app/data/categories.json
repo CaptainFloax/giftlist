@@ -1,0 +1,32 @@
+{
+    "categories": [
+        {
+            "name": "Bain",
+            "tag": "bath"
+        },
+        {
+            "name": "Securité & Déplacements",
+            "tag": "security"
+        },
+        {
+            "name": "Dodo",
+            "tag": "dodo"
+        },
+        {
+            "name": "Jeux & Eveil",
+            "tag": "games"
+        },
+        {
+            "name": "Repas",
+            "tag": "meal"
+        },
+        {
+            "name": "Vétements",
+            "tag": "clothes"
+        },
+        {
+            "name": "Divers",
+            "tag": "others"
+        }
+    ]
+}

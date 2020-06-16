@@ -1,4 +1,4 @@
-$tone500: 50 !default;
+$tone500: 66 !default;
 
 $tones: (
     0 : 98,
@@ -43,3 +43,34 @@ $states : (
         s: 100
     )
 ) !default;
+
+$categories: (
+    bath : (
+        h: 134,
+        s: 23
+    ),
+    security : (
+        h: 3,
+        s: 56
+    ),
+    dodo : (
+        h: 289,
+        s: 98
+    ),
+    games : (
+        h: 30,
+        s: 3
+    ),
+    meal : (
+        h: 159,
+        s: 23
+    ),
+    clothes : (
+        h: 45,
+        s: 23
+    ),
+    others : (
+        h: 24,
+        s: 23
+    ),
+)

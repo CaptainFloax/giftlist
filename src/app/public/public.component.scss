@@ -1,9 +1,23 @@
 @use '../../styles.scss';
 
 .container{
+    flex: 1;
     background-color: styles.color(primary, 0);
     height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
+
+    .c-sidebar{
+        position: fixed;
+        @media screen and (max-width: 700px){display: none;}
+        height: 100%;
+    }
+
+    .c-content{
+        max-height: 100%;
+        width: 100%;
+        @media screen and (min-width: 700px){
+            width: calc(100% - 250px);
+            margin-left: styles.$sidebar-h;
+        }
+        
+    }
 }

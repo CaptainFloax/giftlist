@@ -1,11 +1,12 @@
 export class Product {
-    id: number;
+    id: string;
     img: string;
     name: string;
     description: string;
-    price: number;
+    price: string;
     get: boolean;
-    cat: string;
+    cat: string[];
+    shop: string;
     link: string;
-    participate: boolean;
+    participation: boolean;
 }

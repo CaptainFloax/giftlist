@@ -1,3 +1,26 @@
 <div class="lists-container">
     <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
+    <div class="l-filters">
+        <ul class="f-cat">
+            <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">Tous les produits</li>
+            <li *ngFor="let cat of categories" [ngClass]="{'active': isActive(cat.tag)}" (click)="filterProducts(cat.tag)">{{cat.name}}</li>
+        </ul>
+    </div>
+    <div class="l-products">
+        <div *ngFor="let product of filteredProducts" class="lp-card">
+            <div class="pc-cat {{product.cat[0]}}">
+                <i class="eva eva-pantone-outline"></i>
+            </div>
+            <div class="pc-content">
+                <div class="pcc-text">
+                    <p class="ct-name">{{product.name}}</p>
+                    <p class="ct-desc">{{product.name}}</p>
+                </div>
+                <div class="pcc-amount">
+                    <p class="ca-cat">{{product.shop}}</p>
+                    <p class="ca-price">{{product.price}}</p>
+                </div>
+            </div>
+        </div>   
+    </div>
 </div>
