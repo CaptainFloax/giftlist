@@ -1,0 +1,60 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+# Preprod
+build_preprod:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - develop
+
+deploy_preprod:
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y libssl-dev
+    - apt-get install -y lftp
+  environment:
+    name: dev
+  script:
+    - lftp sftp://$USERNAME:$PASSWORD@$HOST:$PORT -e "$LFTP_CMD"
+  only:
+    - develop
+  dependencies:
+    - build_preprod
+
+
+# Prod
+build_prod:
+  stage: build
+  script:
+    - npm install
+    - npm run build:ssr
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - master
+
+deploy_prod:
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y libssl-dev
+    - apt-get install -y lftp
+  environment:
+    name: prod
+  script:
+    - lftp sftp://$USERNAME:$PASSWORD@$HOST:$PORT -e "$LFTP_CMD"
+  only:
+    - master
+  dependencies:
+    - build_prod
