@@ -96,32 +96,32 @@ html > *, body > * {
   max-width: 350px;
 }
 .lists-container .l-products .lp-card .bath {
-  background: #ecf0f9;
-  color: #7d9ad4;
+  background: #eff5f1;
+  color: #91ba9b;
 }
 .lists-container .l-products .lp-card .security {
-  background: #ecf9ee;
-  color: #7dd48b;
+  background: #f9eceb;
+  color: #d87974;
 }
 .lists-container .l-products .lp-card .dodo {
-  background: #f9f3ec;
-  color: #d4ab7d;
+  background: #fae6ff;
+  color: #dd4efd;
 }
 .lists-container .l-products .lp-card .games {
-  background: #f9efec;
-  color: #d4917d;
+  background: #f3f2f2;
+  color: #a8a6a3;
 }
 .lists-container .l-products .lp-card .meal {
-  background: #eeecf9;
-  color: #8b7dd4;
+  background: #eff5f3;
+  color: #91baac;
 }
 .lists-container .l-products .lp-card .clothes {
-  background: #ecf4f9;
-  color: #7db7d4;
+  background: #f5f4ef;
+  color: #bab091;
 }
 .lists-container .l-products .lp-card .others {
-  background: #ecf9f1;
-  color: #7dd49e;
+  background: #f5f2ef;
+  color: #baa291;
 }
 .lists-container .l-products .lp-card .pc-cat {
   min-height: 50px;
@@ -155,7 +155,7 @@ html > *, body > * {
 .lists-container .l-products .lp-card .pc-content .pcc-text .ct-desc {
   margin: 0;
   font-size: 0.8rem;
-  color: #9ba0b5;
+  color: #989db3;
 }
 .lists-container .l-products .lp-card .pc-content .pcc-amount {
   margin-left: 20px;
@@ -166,7 +166,7 @@ html > *, body > * {
 }
 .lists-container .l-products .lp-card .pc-content .pcc-amount .ca-cat {
   font-size: 0.6rem;
-  color: #9ba0b5;
+  color: #989db3;
 }
 .lists-container .l-products .lp-card .pc-content .pcc-amount .ca-price {
   font-size: 1.1em;

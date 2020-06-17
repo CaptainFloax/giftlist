@@ -17,6 +17,20 @@
             h: 230,
             s: 15
         )
+    ),
+    $tones: (
+        0 : 98,
+        100 : 95,
+        200 : 90,
+        300: 85,
+        400: 80,
+        500: 65,
+        600: 40,
+        700: 35,
+        750: 33,
+        800: 30,
+        900: 25,
+        1000: 10
     )
 );
 
@@ -30,17 +44,24 @@
 @forward 'theme/palettes';
 
 $palettes: ();
+$states: ();
 $cats: ();
 
 @each $key, $value in colors.$palette{
     $map: ();
-    $map: map-merge($map, ($key: f.create_colour_map($value)));
+    $map: map-merge($map, ($key: f.create_color_map($value)));
     $palettes: map-merge($palettes, $map);
+}
+
+@each $key, $value in colors.$states{
+    $map: ();
+    $map: map-merge($map, ($key: f.create_color_map($value)));
+    $states: map-merge($states, $map);
 }
 
 @each $key, $value in colors.$categories{
     $map: ();
-    $map: map-merge($map, ($key: f.create_colour_map($value)));
+    $map: map-merge($map, ($key: f.create_color_map($value)));
     $cats: map-merge($cats, $map);
 }
 

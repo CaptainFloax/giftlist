@@ -7,19 +7,13 @@
     @return $map;
 }
 
-@function create_colour_map($color) {
-    $map: (
-        0 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 0)),
-        100 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 100)),
-        200 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 200)),
-        300 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 300)),
-        400 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 400)),
-        500 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 500)),
-        600 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 600)),
-        700 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 700)),
-        800 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 800)),
-        900 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 900)),
-        1000 : hsl(map-get($color, h), map-get($color, s), map-get(colors.$tones, 1000)),
-    );
-    @return $map;
+@function create_color_map($color){
+    $map-tone: ();
+
+    @each $key, $value in colors.$tones{
+        $map: ();
+        $map: map-merge($map, ($key: hsl(map-get($color, h), map-get($color, s), $value)));
+        $map-tone: map-merge($map-tone, $map);
+    }
+    @return $map-tone;
 }
