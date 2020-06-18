@@ -10,15 +10,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'public/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'public',
     component: PublicComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: DashboardComponent,
         pathMatch: 'full'
       },
@@ -36,6 +31,10 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
         pathMatch: 'full'
+      },
+      {
+        path: '**',
+        redirectTo: ''
       },
     ]
   },

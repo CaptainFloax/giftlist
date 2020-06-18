@@ -5,7 +5,7 @@
     <nav class="sl-nav">
         <ul class="sln-navigation">
             <li *ngFor="let nav of navigationItems" class="nav-item">
-                <a routerLink="{{nav.link}}" routerLinkActive="active">
+                <a routerLink="/{{nav.link}}" routerLinkActive="active">
                     <img src="/assets/graphics/icons/{{nav.icon}}"/> {{nav.name}}
                 </a>
                 <ul *ngIf="nav.child" class="second-nav">

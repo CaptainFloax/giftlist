@@ -44,7 +44,7 @@ export class SidebarComponent implements OnInit {
   navigationItems: any = [
       {
         name: "Accueil",
-        link: "home",
+        link: "/",
         icon: "tutute.svg",
         child: false
       },
