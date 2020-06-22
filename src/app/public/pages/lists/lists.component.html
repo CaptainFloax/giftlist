@@ -1,26 +1,89 @@
 <div class="lists-container">
-    <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
-    <div class="l-filters">
-        <ul class="f-cat">
-            <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">Tous les produits</li>
-            <li *ngFor="let cat of categories" [ngClass]="{'active': isActive(cat.tag)}" (click)="filterProducts(cat.tag)">{{cat.name}}</li>
-        </ul>
+    <div class="lc-content">
+        <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
+        <div class="l-alert">
+            <img src="../../../../assets/graphics/illu/02.svg"/>
+            <div class="ghost"></div>
+            <div class="a-text">
+                <h2>Evidemment, pensons à la planète, les cadeaux faits main ou d’occasion nous feront tout autant plaisir !</h2>
+                <p>
+                    Concrètement comment ça se passe? 
+                </p>
+                <ul>
+                    <li><strong>1ère étape</strong>: Sélectionnez un article  dans les propositions ci-dessous</li>
+                    <li><strong>2ème étape</strong>: Quand vous avez choisi THE cadeau, vous pouvez soit vous mettre en quête de celui-ci (via le lien web proposé, ou autre). Soit effectuer une participation financière par l'intermédiaire du site. Nous irons alors chercher votre cadeau. </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l-filters">
+            <ul class="f-cat">
+                <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">
+                    <i class="eva eva-list"></i>
+                    <p>Tous les produits</p>
+                </li>
+                <li *ngFor="let cat of categories" [ngClass]="{'active': isActive(cat.tag)}" (click)="filterProducts(cat.tag)">
+                    <i class="eva eva-loader-outline"></i>
+                    <p>{{cat.name}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="l-products">
+            <div *ngFor="let product of filteredProducts" class="lp-card">
+                <div class="pc-cat {{product.cat[0]}}">
+                    <i class="eva eva-pantone-outline"></i>
+                </div>
+                <div class="pc-content">
+                    <div class="pcc-text">
+                        <p class="ct-name">{{product.name}}</p>
+                        <p class="ct-desc">{{product.description}}</p>
+                    </div>
+                </div>
+                <div class="pcc-actions">
+                    <button *ngIf="!product.isBought else offert" class="btn btn-primary" (click)="showProduct(product.pid)">Je veux l'offrir !</button>
+                    <ng-template #offert>
+                        <button class="btn btn-success">Offert <i class="eva eva-checkmark-outline"></i></button>
+                    </ng-template>
+                </div>
+            </div>   
+        </div>
     </div>
-    <div class="l-products">
-        <div *ngFor="let product of filteredProducts" class="lp-card">
-            <div class="pc-cat {{product.cat[0]}}">
-                <i class="eva eva-pantone-outline"></i>
-            </div>
-            <div class="pc-content">
-                <div class="pcc-text">
-                    <p class="ct-name">{{product.name}}</p>
-                    <p class="ct-desc">{{product.name}}</p>
+    <div class="lc-bristol" *ngIf="bristol">
+        <div class="lcb-content first-step" *ngIf="!wouldOffer else modal">
+            <img src="https://via.placeholder.com/200"/>
+            <p class="b-title">{{printedProduct.name}}</p>
+            <div class="b-infos">
+                <div class="cat">
+                    <p class="label">catégorie</p>
+                    <p class="data">{{printedProduct.cat}}</p>
                 </div>
-                <div class="pcc-amount">
-                    <p class="ca-cat">{{product.shop}}</p>
-                    <p class="ca-price">{{product.price}}</p>
+                <div class="sep"></div>
+                <div class="price">
+                    <p class="label">prix</p>
+                    <p class="data">{{printedProduct.price}}€</p>
                 </div>
             </div>
-        </div>   
+            <p class="b-desc">{{printedProduct.description}}</p>
+            <button class="b-offer" (click)="offer()">Je l'offre <i class="eva eva-arrow-forward-outline"></i></button>
+        </div>
+        <ng-template #modal>
+            <div class="lcb-content second-step">
+                <img src="../../../../assets/graphics/illu/09.svg"/>
+                <p class="b-title">Offrir ce produit</p>
+                <p class="b-subtitle">{{printedProduct.name}}</p>
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input name="name" placeholder="enter your name"/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="name" placeholder="enter your name"/>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-cta" (click)="byPaypal()">Participation Paypall</button>
+                    <button class="btn btn-rib" (click)="rib()">Demander un RIB</button>
+                </div>
+                <button class="b-offer" (click)="buy()">Choisir ce produit <i class="eva eva-arrow-forward-outline"></i></button>
+            </div>
+        </ng-template>
     </div>
 </div>

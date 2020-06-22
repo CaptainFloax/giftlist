@@ -3,7 +3,7 @@
 .sidebar-left{
     width: 250px;
     height: 100%;
-    background-color: styles.color(neutral, 0);
+    background-color: white;
     display: flex;
     flex-direction: column;
     @include styles.addShadow(1);

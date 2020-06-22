@@ -1,10 +1,9 @@
 export class Product {
-    id: string;
     img: string;
     name: string;
     description: string;
-    price: string;
-    get: boolean;
+    price: number;
+    isBought: boolean;
     cat: string[];
     shop: string;
     link: string;

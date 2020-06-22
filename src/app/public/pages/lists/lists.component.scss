@@ -1,111 +1,354 @@
 @use '../../../../styles.scss';
 
 .lists-container{
-    padding: styles.$s-o;
     max-width: 100%;
-    max-height: 100%;
+    height: 100%;
+    display: flex;
 
-    .l-filters{
-        margin: 40px 0 20px 0;
-        .f-cat{
+    .lc-content{
+        padding: styles.$s-o;
+        flex: 5;
+        max-height: 100%;
+        overflow-y: scroll;
+
+        .l-alert{
             display: flex;
-            @include styles.resetList();
-            li{
-                margin: 0 10px;
-                padding: 5px 10px;
-                font-size: 0.8rem;
+            flex-flow: wrap;
+            margin: 50px 0;
+            background-color: styles.color(accent, 100);
+            position: relative;
 
-                &.active{
-                    color: styles.color(primary, 600);
-                    background-color: styles.color(primary,100);
+            img{
+                position: absolute;
+                max-height: 200px;
+                top: -30px;
+                left: 10px;
+            }
+
+            .ghost{
+                min-width: 200px;
+                min-height: 200px;
+            }
+
+            .a-text{
+                margin-left: auto;
+                padding: 30px;
+                flex: 1;
+                
+                h2{
+                    font-size: 1.2em;
+                    color: styles.color(accent, 600);
                 }
-
-                &:first-child{
-                    margin-left: 0;;
+                p, li{
+                    font-size: 0.7em;
                 }
+    
+                ul{
+                    @include styles.resetList();
+                }
+            }
+        }
 
-                &:hover{
-                    cursor: pointer;
+        .l-filters{
+            margin: 40px 0 20px 0;
+            .f-cat{
+                display: flex;
+                flex-flow: wrap;
+                @include styles.resetList();
+                li{
+                    text-align: center;
+                    border-radius: 40px;
+                    padding: 0;
+                    width: 65px;
+                    color: styles.color(neutral, 600);
+                    background-color: white;
+                    margin: 0 5px;
+                    transition: ease-in 200ms;
+
+                    i{
+                        font-size: 30px;
+                        padding: 10px;
+                        border-radius: 50px;
+                        width: 30px;
+                        height: 30px;
+                        display: block;
+                        background-color: white;
+                        margin: 5px auto;
+                        border: 1px solid styles.color(neutral, 100);
+                    }
+
+                    p{
+                        margin: 10px 0 30px 0;
+                        font-size: 0.6em;
+                        font-weight: 600;
+                    }
+    
+                    &.active, &:hover{
+                        color: styles.color(secondary, 100);
+                        background-color: styles.color(secondary,500);
+                        border: 0;
+
+                        i{
+                            color: styles.color(secondary, 500);
+                        }
+                    }
+    
+                    &:first-child{
+                        margin-left: 0;;
+                    }
+    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    
+        .l-products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 100%;
+            
+            .lp-card{
+                min-height: 220px;
+                width: 150px;
+                background-color: white;
+                padding: styles.$s-m;
+                border-radius: 10px;
+                display: flex;
+                margin-top: 10px;
+                flex-direction: column;
+                justify-content: flex-start;
+    
+                @each $key, $value in styles.$categories{
+                    .#{$key}{
+                        background: styles.colorcat($key, 100);
+                        color: styles.colorcat($key, 500);
+                    }
+                }
+    
+                .pc-cat{
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 10px;
+    
+                    i{
+                        font-size: 20px;
+                        margin: 15px 0 0 15px;
+                    }
+                }
+    
+                .pc-content{
+                    margin: 10px 0;
+                    width: 100%;
+                    flex: 1;
+    
+                    .pcc-text{
+                        min-width: 150px;
+                        .ct-name{
+                            margin: 0;
+                            margin-bottom: 5px;
+                            color: styles.color(primary, 800);
+                            font-weight: 600;
+                        }
+    
+                        .ct-desc{
+                            margin: 0;
+                            font-size: 0.8rem;
+                            color: styles.color(neutral, 500);
+                        }
+                    }                
+                }
+                .pcc-actions{
+                    margin-top: auto;
+                    text-align: right;
+                    .btn{
+                        padding: 8px 15px;
+                        border: 0;
+                        font-weight: 500;
+                        font-size: 0.8em;
+
+                        &.btn-primary{
+                            background-color: styles.color(accent, 100);
+                            color: styles.color(accent, 600);
+                        }
+
+                        &.btn-success{
+                            background-color: styles.colorstates(success, 100);
+                            color: styles.colorstates(success, 600);
+
+                            i{
+                                vertical-align: middle;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
-    .l-products{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        @media screen and (max-width: 700px){grid-template-columns: 1fr;}
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-        grid-auto-flow: row dense;
-        max-width: 100%;
-        
-        .lp-card{
-            min-height: 70px;
-            min-width: 70px;
-            display: flex;
-            align-items: center;
-            max-width: 350px;
+    .lc-bristol{
+        //display: none;
+        flex: 2;
+        max-width: 300px;
+        min-height: 100%;
+        background-color: white;
+        @include styles.addShadow(1);
 
-            @each $key, $value in styles.$categories{
-                .#{$key}{
-                    background: styles.colorcat($key, 100);
-                    color: styles.colorcat($key, 500);
-                }
-            }
+        .lcb-content{
 
-            .pc-cat{
-                min-height: 50px;
-                min-width: 50px;
-                border-radius: 10px;
-
-                i{
-                    font-size: 20px;
-                    margin: 15px 0 0 15px;
-                }
-            }
-
-            .pc-content{
-                margin-left: 10px;
-                width: 100%;
+            &.first-step{
                 display: flex;
-                justify-content: space-between;
-                align-content: center;
+            }
+    
+            &.second-step{
+                img{
+                    max-width: 200px;
+                }
 
-                .pcc-text{
-                    min-width: 150px;
-                    .ct-name{
-                        margin: 0;
-                        color: styles.color(primary, 800);
-                        font-weight: 600;
+                .b-title{
+                    border-bottom: 0;
+                    margin: 0
+                }
+
+                .form-group{
+                    margin: 0;
+                    > *{
+                        display: block;
                     }
 
-                    .ct-desc{
-                        margin: 0;
-                        font-size: 0.8rem;
-                        color: styles.color(neutral, 500);
+                    label{
+                        font-size: 0.8em;
+                        color: styles.color(neutral, 600);
+                    }
+                    input{
+                        padding: 10px;
+                        border: 1px solid styles.color(neutral, 100);
+                        padding: styles.$s-a 0;
                     }
                 }
 
-                .pcc-amount{
-                    margin-left: 20px;
-                    text-align: right;
+                .b-offer{
+                    margin: 0;
+                    margin-left: auto;
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            flex-flow: wrap;
+            align-content: flex-start;
+            height: 100%;
+
+            > *{
+                padding: styles.$s-m;
+            }
+
+            img{
+                margin: 20px auto;
+            }
+
+            .b-title{
+                width: 100%;
+                padding: styles.$s-m;
+                font-size: 1.4em;
+                color: styles.color(neutral, 600);
+                border-bottom: 1px solid styles.color(neutral, 100);
+            }
+
+            .b-subtitle{
+                width: 100%;
+                margin: 0;
+                font-size: 1em;
+                color: styles.color(primary, 400);
+                border-bottom: 1px solid styles.color(neutral, 100);
+            }
+
+            .b-infos{
+                width: 100%;
+                background-color: styles.color(primary, 500);
+                margin: styles.$s-m;
+                padding: styles.$s-m;
+                border-radius: 5px;
+                display: flex;
+                justify-items: stretch;
+                margin-bottom: auto;
+
+                .sep{
+                    width: 1px;
+                    background-color: styles.color(primary, 100);
+                }
+
+                .cat, .price{
+                    flex: 1;
+                    text-align: center;
+                    color: styles.color(primary, 100);
 
                     p{
                         margin: 0;
                     }
 
-                    .ca-cat{
-                        font-size: 0.6rem;
-                        color: styles.color(neutral, 500);
+                    .label{
+                        font-size: 0.7em;
+                        margin-bottom: 5px;
+                        font-weight: 300;
                     }
-
-                    .ca-price{
-                        font-size: 1.1em;
-                        color: styles.color(primary, 600)
+                    .data{
+                        font-size: 1.3em;
                     }
                 }
-                
+            }
+
+            .b-desc{
+                color: styles.color(neutral, 700);
+                width: 100%;
+            }
+
+            .actions{
+                display: flex;
+                flex-flow: wrap;
+                justify-content: center;
+                .btn{
+                    border: 0;
+                    padding: 8px 10px;
+                    margin: 0 5px;
+                    &.btn-cta{
+                        background-color: styles.color(primary, 100);
+                        color: styles.color(primary, 600);
+                    }
+                    &.btn-rib{
+                        background-color: transparent;
+                        color: styles.color(primary, 600);
+                    }
+                }
+            }
+
+            .b-offer{
+                padding: 10px;
+                background-color: styles.color(accent, 500);
+                color: styles.color(accent, 100);
+                border: 0;
+                margin-left: auto;
+                margin-top: 50px;
+                margin-bottom: 30px;
+                padding: 25px 30px;
+                font-weight: 800;
+                font-size: 1em;
+                border-radius: 20px 0 0 20px;
+
+                i{
+                    font-size: 1.1em;
+                    vertical-align: middle;
+                    transition: ease-in 300ms;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    i{
+                        margin-left: 10px;
+                    }
+                }
             }
         }
     }

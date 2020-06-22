@@ -27,9 +27,9 @@
   src: local("Roboto Bold"), url("src/assets/fonts/roboto-bold.woff2") format("woff2"), url("src/assets/fonts/roboto-bold.woff") format("woff"), url("src/assets/fonts/roboto-bold.ttf") format("truetype");
 }
 html, body {
-  background-color: white;
+  background-color: #f9f9fb;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -55,7 +55,7 @@ html > *, body > * {
   }
 }
 .container .c-content {
-  max-height: 100%;
+  height: 100%;
   width: 100%;
 }
 @media screen and (min-width: 700px) {

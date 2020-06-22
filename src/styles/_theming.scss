@@ -6,12 +6,12 @@
             s: 47
         ),
         secondary: (
-            h: 357,
-            s: 90
+            h: 206,
+            s: 77
         ),
         accent: (
-            h: 39,
-            s: 93
+            h: 26,
+            s: 96
         ),
         neutral: (
             h: 230,
@@ -71,4 +71,9 @@ $cats: ();
 
 @function colorcat($cat: 'neutral', $tone: '500') {
     @return map-get(map-get($cats, $cat), $tone);
+}
+
+
+@function colorstates($state: 'neutral', $tone: '500') {
+    @return map-get(map-get($states, $state), $tone);
 }
