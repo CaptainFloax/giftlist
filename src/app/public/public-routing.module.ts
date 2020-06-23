@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent } from './public.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: DashboardComponent,
+        component: HomeComponent,
         pathMatch: 'full'
       },
       {

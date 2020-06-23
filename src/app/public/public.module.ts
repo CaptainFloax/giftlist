@@ -6,7 +6,7 @@ import { PublicRoutingModule, publicRoutingComponents } from './public-routing.m
 import { PublicComponent } from './public.component';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -19,7 +19,7 @@ import { PanierComponent } from './pages/panier/panier.component';
     PublicComponent,
     SidebarComponent,
     publicRoutingComponents,
-    DashboardComponent,
+    HomeComponent,
     ListsComponent,
     MietteComponent,
     ContactComponent,
@@ -29,7 +29,7 @@ import { PanierComponent } from './pages/panier/panier.component';
   imports: [
     BrowserModule,
     CommonModule,
-    PublicRoutingModule,
+    PublicRoutingModule
   ]
 })
 export class PublicModule { }

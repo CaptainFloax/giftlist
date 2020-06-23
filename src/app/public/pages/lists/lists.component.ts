@@ -17,7 +17,7 @@ export class ListsComponent implements OnInit {
   categories: any[] = cat.categories;
   filteredProducts: any;
   activeFilter: string = "all";
-  printedProduct: any = new Product;
+  printedProduct: any = new Product();
   bristol: boolean = false;
 
   titles: any = [

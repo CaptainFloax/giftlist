@@ -6,15 +6,6 @@ import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
-    path: 'admin/login',
-    component: LoginComponent
-  },
-  {
-    path: '',
-    redirectTo: 'admin',
-    pathMatch: 'full'
-  },
-  {
     path: 'admin',
     component: AdminComponent,
     children: [
@@ -22,9 +13,14 @@ const routes: Routes = [
         path: '',
         component: DashboardComponent,
         pathMatch: 'full',
-      }
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+        pathMatch: 'full',
+      },
     ]
-  },
+  }
 ];
 
 @NgModule({

@@ -16,8 +16,8 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PublicModule,
     AdminModule,
+    PublicModule,
     HttpClientModule
   ],
   providers: [],

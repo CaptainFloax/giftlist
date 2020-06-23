@@ -1,0 +1,103 @@
+@use '../../../../styles.scss';
+.products-container{
+    display: flex;
+    width: 100%;
+    .pc-products{
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        max-width: 400px;
+        padding: 0 styles.$s-m;
+        max-height: 100%;
+        
+        .pcp-card{
+            width: 150px;
+            background-color: white;
+            padding: styles.$s-m;
+            border-radius: 10px;
+            margin-top: 10px;
+            @include styles.addShadow(1);
+
+            p{
+                margin: 0;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            @each $key, $value in styles.$categories{
+                .#{$key}{
+                    background: styles.colorcat($key, 100);
+                    color: styles.colorcat($key, 500);
+                }
+            }
+        }
+    }
+
+    .pc-details{
+        padding: styles.$s-o;
+        flex: 1;
+        background-color: white;
+        max-height: 100%;
+
+        .pcd-infos{
+            display: flex;
+            overflow-y: scroll;
+            img{
+                padding: styles.$s-m;
+                max-height: 200px;
+            }
+    
+            form{
+                flex: 1;
+            }
+        }
+
+        .form-group{
+            width: 100%;
+            margin: styles.$s-m auto;
+            label{
+                display: block;
+                font-size: 0.8em;
+            }
+
+            input, textarea, select{
+                display: block;
+                width: 100%;
+                padding: styles.$s-a;
+                border: 1px solid styles.color(neutral, 400);
+                font-size: 1em;
+                font-family: 'Roboto';
+            }
+
+            &.check{
+                display: flex;
+                justify-content: flex-start;
+                input{
+                    max-width: 50px;
+                    vertical-align: middle;
+                }
+                label{
+                    font-size: 1em;
+                }
+            }
+
+            select{
+                max-width: 150px;
+            }
+        }
+
+        .btn{
+            border: 0;
+            background-color: styles.color(primary, 500);
+            color: styles.color(primary, 100);
+            padding: 5px 10px;
+            font-size: 1.1em;
+            margin: 30px auto;
+            display: block;
+        }
+    }
+}

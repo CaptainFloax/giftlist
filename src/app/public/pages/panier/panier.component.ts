@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent implements OnInit {
-  product: any = new Product;
+  product: any = new Product();
   titles: string[]= [
     "Vous ne savez pas comment nous transmettre votre cadeau ?",
     "Suivez les étapes pour trouver la meilleure façon de le faire !"

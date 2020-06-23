@@ -1,2 +1,113 @@
-<div class="d-container">
+<div class="products-container">
+    <div class="pc-products">
+        <div class="pcp-card" *ngFor="let p of products" (click)="selectProduct(p)">
+            <p>{{p.name}}</p>
+        </div>
+        <div class="pcp-card" (click)="createProduct()">
+            <p>Ajouter un produit</p>
+        </div>
+    </div>
+    <div class="pc-details">
+        <h1>{{product.name}}</h1>
+        <div class="pcd-infos">
+            <img src="../../../../assets/photos/{{product.cat[0]}}/{{product.img}}">
+            <form (ngSubmit)="saveUser()">
+                <div class="form-group">
+                    <label for="img">Image</label>
+                    <input
+                        type="text"
+                        name="product"
+                        id="img"
+                        [(ngModel)]="product.img"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input
+                        type="text"
+                        name="product"
+                        id="name"
+                        [(ngModel)]="product.name"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="cat">Description</label>
+                    <textarea
+                        type="text"
+                        name="product"
+                        id="desc"
+                        [(ngModel)]="product.description"
+                        [ngModelOptions]="{standalone: true}"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cat">Catégories</label>
+                    <select
+                        name="product"
+                        id="cat"
+                        [(ngModel)]="product.cat"
+                        [ngModelOptions]="{standalone: true}">
+                        <option
+                            [ngValue]="cat"
+                            *ngFor="let cat of categories">{{cat.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Prix</label>
+                    <input
+                        type="number"
+                        name="product"
+                        id="price"
+                        step=".01"
+                        [(ngModel)]="product.price"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="shop">Boutique</label>
+                    <input
+                        type="text"
+                        name="product"
+                        id="shop"
+                        [(ngModel)]="product.shop"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="link">Lien</label>
+                    <input
+                        type="text"
+                        name="product"
+                        id="link"
+                        [(ngModel)]="product.link"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="link">Quantité</label>
+                    <input
+                        type="text"
+                        name="product"
+                        id="quantity"
+                        [(ngModel)]="product.quantity"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group check">
+                    <input
+                        type="checkbox"
+                        name="product"
+                        id="etat"
+                        [(ngModel)]="product.isBought"
+                        [ngModelOptions]="{standalone: true}"/>
+                        <label for="etat" class="inline">Offert</label>
+                </div>
+                <div class="form-group check">
+                    <input
+                        type="checkbox"
+                        name="product"
+                        id="part"
+                        [(ngModel)]="product.participation"
+                        [ngModelOptions]="{standalone: true}"/>
+                    <label for="part" class="inline">Participation autorisée</label>
+                </div>
+                <button type="submit" class="btn btn-save">Sauvegarder</button>
+            </form>
+        </div>
+    </div>
 </div>

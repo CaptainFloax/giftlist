@@ -1,4 +1,5 @@
 export class Product {
+    pid: number;
     img: string;
     name: string;
     description: string;
@@ -7,5 +8,7 @@ export class Product {
     cat: string[];
     shop: string;
     link: string;
+    quantity: number;
     participation: boolean;
+    
 }
