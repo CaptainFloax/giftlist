@@ -3,6 +3,9 @@ import * as data from '../../../data/products.json';
 import * as cat from '../../../data/categories.json';
 import { Product } from 'src/app/models/product';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment'
 
 @Component({
   selector: 'app-lists',
@@ -16,14 +19,13 @@ export class ListsComponent implements OnInit {
   activeFilter: string = "all";
   printedProduct: any = new Product;
   bristol: boolean = false;
-  wouldOffer: boolean = false;
 
   titles: any = [
     'La liste de nos envies',
     'Vous pouvez participer à l\achat d\'un ou plusieurs cadeaux'
   ]
 
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef) {
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef, public dataService: DataService, private _router: Router) {
     ref.detach();
     setInterval(() => {
       this.ref.detectChanges();
@@ -31,7 +33,7 @@ export class ListsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/products')
+    this.http.get(environment._apiurl+'/products')
             .subscribe(products => {
 
                 this.products = products;
@@ -56,8 +58,7 @@ export class ListsComponent implements OnInit {
   }
 
   showProduct(pid: number){
-    this.wouldOffer = false;
-    this.http.get('http://localhost:3000/product/'+pid)
+    this.http.get(environment._apiurl + '/product/'+pid)
             .subscribe(products => {
 
               this.printedProduct = products;
@@ -66,7 +67,8 @@ export class ListsComponent implements OnInit {
   }
 
   offer(){
-    this.wouldOffer = true;
+    this.dataService.chosenProduct = this.printedProduct;
+    this._router.navigate(['/panier']);
   }
 
   byPaypal(){
@@ -78,7 +80,7 @@ export class ListsComponent implements OnInit {
   }
 
   buy(){
-    let posturl: string = "http://localhost:3000/buy/" + this.printedProduct.pid;
+    let posturl: string = environment._apiurl+ "/buy/" + this.printedProduct.pid;
 
     this.http.post(posturl, {}).subscribe((res) => {
         console.log(res);

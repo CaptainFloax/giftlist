@@ -212,23 +212,6 @@
                     margin: 0
                 }
 
-                .form-group{
-                    margin: 0;
-                    > *{
-                        display: block;
-                    }
-
-                    label{
-                        font-size: 0.8em;
-                        color: styles.color(neutral, 600);
-                    }
-                    input{
-                        padding: 10px;
-                        border: 1px solid styles.color(neutral, 100);
-                        padding: styles.$s-a 0;
-                    }
-                }
-
                 .b-offer{
                     margin: 0;
                     margin-left: auto;

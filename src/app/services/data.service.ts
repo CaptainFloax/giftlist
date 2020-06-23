@@ -6,6 +6,8 @@ import ProductJson from '../data/products.json';
   providedIn: 'root'
 })
 export class DataService {
+
+  chosenProduct: any;
  
   constructor() {}
 

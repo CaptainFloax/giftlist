@@ -11,6 +11,7 @@ import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { PanierComponent } from './pages/panier/panier.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TopbarComponent } from './topbar/topbar.component';
     ListsComponent,
     MietteComponent,
     ContactComponent,
-    TopbarComponent // Public Routes and Components declaration
+    TopbarComponent,
+    PanierComponent // Public Routes and Components declaration
   ],
   imports: [
     BrowserModule,

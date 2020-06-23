@@ -294,21 +294,6 @@ html > *, body > * {
   border-bottom: 0;
   margin: 0;
 }
-.lists-container .lc-bristol .lcb-content.second-step .form-group {
-  margin: 0;
-}
-.lists-container .lc-bristol .lcb-content.second-step .form-group > * {
-  display: block;
-}
-.lists-container .lc-bristol .lcb-content.second-step .form-group label {
-  font-size: 0.8em;
-  color: #575c75;
-}
-.lists-container .lc-bristol .lcb-content.second-step .form-group input {
-  padding: 10px;
-  border: 1px solid #f0f1f4;
-  padding: 8px 0;
-}
 .lists-container .lc-bristol .lcb-content.second-step .b-offer {
   margin: 0;
   margin-left: auto;

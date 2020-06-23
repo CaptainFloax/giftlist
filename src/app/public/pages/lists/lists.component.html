@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="lc-bristol" *ngIf="bristol">
-        <div class="lcb-content first-step" *ngIf="!wouldOffer else modal">
+        <div class="lcb-content first-step">
             <img src="https://via.placeholder.com/200"/>
             <p class="b-title">{{printedProduct.name}}</p>
             <div class="b-infos">
@@ -68,16 +68,6 @@
         <ng-template #modal>
             <div class="lcb-content second-step">
                 <img src="../../../../assets/graphics/illu/09.svg"/>
-                <p class="b-title">Offrir ce produit</p>
-                <p class="b-subtitle">{{printedProduct.name}}</p>
-                <div class="form-group">
-                    <label>Nom</label>
-                    <input name="name" placeholder="enter your name"/>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input name="name" placeholder="enter your name"/>
-                </div>
                 <div class="actions">
                     <button class="btn btn-cta" (click)="byPaypal()">Participation Paypall</button>
                     <button class="btn btn-rib" (click)="rib()">Demander un RIB</button>

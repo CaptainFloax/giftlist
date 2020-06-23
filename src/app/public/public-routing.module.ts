@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PanierComponent } from './pages/panier/panier.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,11 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'panier',
+        component: PanierComponent,
         pathMatch: 'full'
       },
       {
