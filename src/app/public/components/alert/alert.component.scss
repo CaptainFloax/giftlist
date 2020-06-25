@@ -1,0 +1,39 @@
+@use '../../../../styles.scss';
+
+.l-alert{
+    display: flex;
+    flex-flow: wrap;
+    margin: 50px 0;
+    background-color: styles.color(accent, 100);
+    position: relative;
+
+    img{
+        position: absolute;
+        max-height: 200px;
+        top: -30px;
+        left: 10px;
+    }
+
+    .ghost{
+        min-width: 200px;
+        min-height: 200px;
+    }
+
+    .a-text{
+        margin-left: auto;
+        padding: 30px;
+        flex: 1;
+        
+        h2{
+            font-size: 1.2em;
+            color: styles.color(accent, 600);
+        }
+        p, li{
+            font-size: 0.7em;
+        }
+
+        ul{
+            @include styles.resetList();
+        }
+    }
+}

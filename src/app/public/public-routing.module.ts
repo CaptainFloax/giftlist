@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent } from './public.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListComponent } from './pages/list/list.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -20,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'lists',
-        component: ListsComponent,
+        component: ListComponent,
         pathMatch: 'full'
       },
       {

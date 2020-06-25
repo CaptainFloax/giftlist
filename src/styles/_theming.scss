@@ -1,39 +1,5 @@
 @use 'theme/palettes';
-@use 'theme/colors' with (
-    $palette: (
-        primary: (
-            h: 224,
-            s: 47
-        ),
-        secondary: (
-            h: 206,
-            s: 77
-        ),
-        accent: (
-            h: 26,
-            s: 96
-        ),
-        neutral: (
-            h: 230,
-            s: 15
-        )
-    ),
-    $tones: (
-        0 : 98,
-        100 : 95,
-        200 : 90,
-        300: 85,
-        400: 80,
-        500: 65,
-        600: 40,
-        700: 35,
-        750: 33,
-        800: 30,
-        900: 25,
-        1000: 10
-    )
-);
-
+@use 'theme/colors';
 @use 'functions' as f;
 
 // THEME

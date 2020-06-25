@@ -1,0 +1,276 @@
+@use '../../../../styles';
+
+
+.list-container{
+    display: flex;
+    flex-flow: wrap;
+
+    .lc-hero{
+        flex: 2;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid styles.color(primary, 200);
+
+        .header{
+            margin-top: 0;
+            padding: styles.$s-m;
+            img{
+                max-height: 70px;
+            }
+        }
+
+        .nav{
+            margin-top: 20px;
+            max-width: 70%;
+            margin: 0 auto;
+            margin-right: 0;
+
+            p{
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 200;
+                margin: 0;
+                color: styles.color(neutral, 400);
+            }
+            h1{
+                color: styles.color(neutral, 600);
+                margin: 0;
+            }
+
+            .n-info{
+                margin: 30px 0;
+                .w-text{
+                    font-size: 14px;
+                    color: styles.color(neutral, 500);
+                }
+
+                .w-nb{
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    color: styles.color(neutral, 600);
+                    position: relative;
+                    padding: styles.$s-a;
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        height: 3px;
+                        width: 100px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: styles.color(accent, 300);
+                        border-radius: 5px;
+                    }
+
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        height: 3px;
+                        width: 70px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: styles.color(accent, 500);
+                        border-radius: 5px;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    .lc-content{
+        flex: 5;
+        min-width: 60%;
+        height: 70vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &:before{
+            content: '';
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            right: -20%;
+            top: 20px;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: styles.color(accent, 500);
+        }
+
+        .lcc-infos{
+            color: styles.color(neutral, 600);
+            padding: styles.$s-o;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .i-cat{
+                padding: 3px styles.$s-a;
+                font-size: 14px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                display: inline-block;
+                @each $key, $value in styles.$categories{
+                    &.c-#{$key}{
+                        color: styles.colorcat($key, 600);
+                        background-color: styles.colorcat($key, 200);
+                    }
+                }
+            }
+
+            .i-name{
+                margin: 0;
+                font-size: 40px;
+            }
+
+            .i-desc{
+                color: styles.color(neutral, 500);
+                margin: 5px 0;
+            }
+
+            .i-price{
+                font-style: italic;
+                margin-top: 5px;
+            }
+
+            .i-btn{
+                @include styles.resetBtn();
+                background-color: styles.color(accent, 500);
+                border-radius: 20px;
+                padding: 5px 15px;
+                padding-left: 5px;
+                font-size: 18px;
+                color: styles.color(accent, 0);
+
+                &:hover{
+                    cursor: pointer;
+                    i{
+                        transform: scale(0.9);
+                    }
+                    
+                }
+
+                i{
+                    transition: ease-in 200ms;
+                    border-radius: 20px;
+                    padding: 5px;
+                    margin-right: 10px;
+                    font-size: 20px;
+                    color: styles.color(accent, 600);
+                    background-color: styles.color(accent, 0);
+                }
+            }
+        }
+        
+        .lcc-visuel{
+            flex: 1;
+            max-width: 50%;
+            margin-top: styles.$s-o;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            position: relative;
+            z-index: 5;
+        }
+    }
+
+    .lc-products{
+        min-width: 100%;
+        height: 30vh;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+
+        .lp-card{
+            min-height: 120px;
+            width: 150px;
+            background-color: white;
+            padding: styles.$s-m;
+            border-radius: 10px;
+            display: flex;
+            margin: 10px;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            &:hover{
+                cursor: pointer;
+                @include styles.addShadow(1);
+            }
+
+            &.active{
+                @include styles.addShadow(1);
+            }
+
+            @each $key, $value in styles.$categories{
+                .#{$key}{
+                    background: styles.colorcat($key, 100);
+                    color: styles.colorcat($key, 500);
+                }
+            }
+
+            .pc-cat{
+                height: 50px;
+                width: 50px;
+                border-radius: 10px;
+
+                i{
+                    font-size: 20px;
+                    margin: 15px 0 0 15px;
+                }
+            }
+
+            .pc-content{
+                margin: 10px 0;
+                width: 100%;
+                flex: 1;
+
+                .pcc-text{
+                    min-width: 150px;
+                    .ct-name{
+                        margin: 0;
+                        margin-bottom: 5px;
+                        color: styles.color(primary, 800);
+                        font-weight: 600;
+                    }
+
+                    .ct-desc{
+                        margin: 0;
+                        font-size: 0.8rem;
+                        color: styles.color(neutral, 500);
+                    }
+                }                
+            }
+            .pcc-actions{
+                margin-top: auto;
+                text-align: right;
+                .btn{
+                    padding: 8px 15px;
+                    border: 0;
+                    font-weight: 500;
+                    font-size: 0.8em;
+
+                    &.btn-primary{
+                        background-color: styles.color(accent, 100);
+                        color: styles.color(accent, 600);
+                    }
+
+                    &.btn-success{
+                        background-color: styles.colorstates(success, 100);
+                        color: styles.colorstates(success, 600);
+
+                        i{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

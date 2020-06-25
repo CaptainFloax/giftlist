@@ -1,20 +1,15 @@
 <div class="lists-container">
     <div class="lc-content">
         <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
-        <div class="l-alert">
-            <img src="../../../../assets/graphics/illu/02.svg"/>
-            <div class="ghost"></div>
-            <div class="a-text">
-                <h2>Evidemment, pensons à la planète, les cadeaux faits main ou d’occasion nous feront tout autant plaisir !</h2>
-                <p>
-                    Concrètement comment ça se passe? 
-                </p>
-                <ul>
-                    <li><strong>1ère étape</strong>: Sélectionnez un article  dans les propositions ci-dessous</li>
-                    <li><strong>2ème étape</strong>: Quand vous avez choisi THE cadeau, vous pouvez soit vous mettre en quête de celui-ci (via le lien web proposé, ou autre). Soit effectuer une participation financière par l'intermédiaire du site. Nous irons alors chercher votre cadeau. </li>
-                </ul>
-            </div>
-        </div>
+        <app-alert [img]="'graphics/illu/02.svg'" [title]="'Evidemment, pensons à la planète, les cadeaux faits main ou d’occasion nous feront tout autant plaisir !'">
+            <p>
+                Concrètement comment ça se passe? 
+            </p>
+            <ul>
+                <li><strong>1ère étape</strong>: Sélectionnez un article  dans les propositions ci-dessous</li>
+                <li><strong>2ème étape</strong>: Quand vous avez choisi THE cadeau, vous pouvez soit vous mettre en quête de celui-ci (via le lien web proposé, ou autre). Soit effectuer une participation financière par l'intermédiaire du site. Nous irons alors chercher votre cadeau. </li>
+            </ul>
+        </app-alert>
         <div class="l-filters">
             <ul class="f-cat">
                 <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">

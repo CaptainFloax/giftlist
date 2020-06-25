@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { PublicRoutingModule, publicRoutingComponents } from './public-routing.module';
 import { PublicComponent } from './public.component';
 
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MietteComponent } from './pages/miette/miette.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { TopbarComponent } from './topbar/topbar.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
 import { PanierComponent } from './pages/panier/panier.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { ListComponent } from './pages/list/list.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { PanierComponent } from './pages/panier/panier.component';
     MietteComponent,
     ContactComponent,
     TopbarComponent,
-    PanierComponent // Public Routes and Components declaration
+    PanierComponent,
+    AlertComponent,
+    ListComponent // Public Routes and Components declaration
   ],
   imports: [
     BrowserModule,

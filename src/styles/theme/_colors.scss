@@ -1,4 +1,4 @@
-$tone500: 66 !default;
+$tone500: 50 !default;
 
 $tones: (
     0 : 98,
@@ -16,16 +16,20 @@ $tones: (
 
 $palette: (
     primary: (
-        h: 224,
-        s: 47
+        h: 229,
+        s: 61
     ),
     secondary: (
-        h: 357,
-        s: 90
+        h: 205,
+        s: 77
+    ),
+    tertiary: (
+        h: 348,
+        s: 83
     ),
     accent: (
-        h: 39,
-        s: 93
+        h: 26,
+        s: 96
     ),
     neutral: (
         h: 230,

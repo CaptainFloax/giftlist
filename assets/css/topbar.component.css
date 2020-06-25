@@ -38,31 +38,11 @@ html > *, body > * {
   font-size: 16px;
 }
 
-.container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background-color: #f8f9fc;
-  height: 100%;
-  max-width: 100%;
+.top-bar .titles h1 {
+  color: #414558;
+  margin: 0;
 }
-.container .c-sidebar {
-  position: fixed;
-  height: 100%;
-}
-@media screen and (max-width: 700px) {
-  .container .c-sidebar {
-    display: none;
-  }
-}
-.container .c-content {
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-}
-@media screen and (min-width: 700px) {
-  .container .c-content {
-    width: calc(100% - 250px);
-    margin-left: 250px;
-  }
+.top-bar .titles p {
+  margin: 8px 0;
+  color: #575c75;
 }

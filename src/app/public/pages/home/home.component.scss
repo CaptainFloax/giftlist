@@ -1,5 +1,213 @@
 @use '../../../../styles.scss';
 
-.dashboard-container{
-    padding: styles.$s-o;
+.home-container{
+    max-width: 100%;
+    max-height: 100vh;
+    margin: 0;
+
+    .h-content{
+        padding: 20px;
+
+        .hero{
+            display: flex;
+            background-color: styles.color(accent, 200);
+            border-radius: 20px;
+            max-width: 100%;
+            @include styles.bpFactory($max: 960px){
+                flex-direction: column;
+            }
+    
+            .h-illu{
+                flex: 2;
+                img{
+                    margin: -30px;
+                    height: 110%;
+                    @include styles.bpFactory($max: 960px){
+                        text-align: center;
+                        max-width: 40vh;
+                    }
+                }
+            }
+    
+            .ghost{
+                flex: 1;
+            }
+    
+            .h-content{
+                flex: 5;
+                padding: 0 styles.$s-o;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+    
+                &:before{
+                    content: '«';
+                    font-size: 300px;
+                    position: absolute;
+                    top: -40px;
+                    left: -60px;
+                    color: styles.color(accent, 300);
+                    z-index: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+    
+                .hc-title{
+                    font-size: 6em;
+                    margin-bottom: 0;
+                    color: styles.color(accent, 900);
+                    z-index: 1;
+                    font-weight: 800;
+                }
+    
+                .hc-text{
+                    max-width: 500px;
+                    font-size: 1.1rem;
+                    z-index: 1;
+                    color: styles.color(neutral, 500);
+                }
+    
+                .hc-btn{
+                    @include styles.resetBtn();
+                    background-color: styles.color(primary, 500);
+                    color: styles.color(primary, 0);
+                    z-index: 1;
+                    font-size: 1em;
+                    border-radius: 2px;
+                    padding: 10px 13px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .actions{
+            display: grid;
+            grid-template-columns: repeat(auto-fill);
+            grid-template-areas: "at" "contact" "miette" "cagnotte" "mt" "message";
+            
+
+            @include styles.bpFactory($min: 960px){
+                grid-template-columns: 1fr 1fr 1fr 2fr;
+                grid-template-rows: 0.2fr 1fr;
+                gap: 1px 1px;
+                grid-template-areas: "at at at mt" "contact miette cagnotte message";
+            }
+
+            .a-title, .m-title{
+                h2{
+                    color: styles.color(neutral, 600);
+                    margin: styles.$s-o 0;
+                }
+            }
+
+            .a-title{
+                grid-area: at;
+
+                h2{
+                    font-size: 40px;
+                }
+            }
+            
+            .m-title{
+                grid-area: mt;
+                text-align: center;
+                border-left: 1px solid styles.color(primary, 100);
+
+                h2{
+                    font-size: 35px;
+                }
+            }
+
+            .p-card{
+                margin: 10px;
+                max-width: 300px;
+                @include styles.bpFactory($max: 960px){margin: 20px auto;}
+
+                &#contact{
+                    grid-area: contact;
+
+                    .pc-hero{
+                        background: styles.color(secondary, 100);
+                    }
+
+                    .pc-link{
+                        color: styles.color(secondary, 500);
+                    }
+                }
+
+                &#miette{
+                    grid-area: miette;
+
+                    .pc-hero{
+                        background: styles.color(tertiary, 100);
+                    }
+
+                    .pc-link{
+                        color: styles.color(tertiary, 500);
+                    }
+                }
+
+                &#cagnotte{
+                    grid-area: cagnotte;
+
+                    .pc-hero{
+                        background: styles.color(primary, 100);
+                    }
+
+                    .pc-link{
+                        color: styles.color(primary, 500);
+                    }
+                }
+
+                .pc-hero{
+                    text-align: center;
+                    height: 200px;
+                    border-radius: 5px;
+                    img{
+                        height: 110%;
+                        margin-top: -10px;
+                    }
+                }
+
+                .pc-content{
+                    padding: styles.$s-m;
+                    .pc-title{
+                        font-size: 1.2em;
+                        color: styles.color(neutral, 700);
+                        margin-bottom: 0;
+                    }
+                    .pc-text{
+                        margin-top: 5px;
+                        font-size: 0.9em;
+                        color: styles.color(neutral, 500);
+                    }
+                    .pc-link{
+                        text-decoration: none;
+                        font-size: 1em;
+                        font-weight: 500;
+
+                        i{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+    
+            .message{
+                grid-area: message;
+                text-align: center;
+                border-left: 1px solid styles.color(primary, 100);
+
+                img{
+                    max-height: 300px;
+                }
+
+                p{
+                    color: styles.color(accent, 700);
+                }
+            }
+        }
+    }
+
 }

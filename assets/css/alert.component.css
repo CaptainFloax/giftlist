@@ -38,60 +38,44 @@ html > *, body > * {
   font-size: 16px;
 }
 
-.sidebar-left {
-  width: 250px;
-  height: 100%;
-  background-color: white;
+.l-alert {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
-          box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  margin: 50px 0;
+  background-color: #fef1e6;
+  position: relative;
 }
-.sidebar-left .sl-logo {
-  max-width: 100%;
-  padding: 32px;
-  text-align: center;
-  margin-bottom: 50px;
+.l-alert img {
+  position: absolute;
+  max-height: 200px;
+  top: -30px;
+  left: 10px;
 }
-.sidebar-left .sl-nav {
-  max-width: 100%;
-  padding: 32px;
+.l-alert .ghost {
+  min-width: 200px;
+  min-height: 200px;
 }
-.sidebar-left .sl-nav .sln-navigation, .sidebar-left .sl-nav .second-nav {
+.l-alert .a-text {
+  margin-left: auto;
+  padding: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.l-alert .a-text h2 {
+  font-size: 1.2em;
+  color: #c85904;
+}
+.l-alert .a-text p, .l-alert .a-text li {
+  font-size: 0.7em;
+}
+.l-alert .a-text ul {
   padding: 0;
   margin: 0;
 }
-.sidebar-left .sl-nav .sln-navigation > li, .sidebar-left .sl-nav .second-nav > li {
+.l-alert .a-text ul > li {
   list-style-type: none;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item {
-  margin-bottom: 32px;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item a {
-  font-weight: 300;
-  color: #989db3;
-  text-decoration: none;
-  padding: 8px;
-  display: block;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item a.active, .sidebar-left .sl-nav .sln-navigation .nav-item a:hover {
-  background-color: #f8f9fc;
-  border-radius: 10px;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item img {
-  max-height: 16px;
-  max-width: 16px;
-  margin-right: 10px;
-  display: inline-block;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item .second-nav {
-  display: none;
-}
-.sidebar-left .sl-nav .sln-navigation .nav-item .second-nav .sn-item {
-  font-size: 0.7em;
 }
