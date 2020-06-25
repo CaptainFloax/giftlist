@@ -79,31 +79,31 @@ html > *, body > * {
 }
 .products-container .pc-products .pcp-card .bath {
   background: #eff5f1;
-  color: #91ba9b;
+  color: #629d70;
 }
 .products-container .pc-products .pcp-card .security {
   background: #f9eceb;
-  color: #d87974;
+  color: #c73f38;
 }
 .products-container .pc-products .pcp-card .dodo {
   background: #fae6ff;
-  color: #dd4efd;
+  color: #cf03fc;
 }
 .products-container .pc-products .pcp-card .games {
   background: #f3f2f2;
-  color: #a8a6a3;
+  color: #83807c;
 }
 .products-container .pc-products .pcp-card .meal {
   background: #eff5f3;
-  color: #91baac;
+  color: #629d88;
 }
 .products-container .pc-products .pcp-card .clothes {
   background: #f5f4ef;
-  color: #bab091;
+  color: #9d8e62;
 }
 .products-container .pc-products .pcp-card .others {
   background: #f5f2ef;
-  color: #baa291;
+  color: #9d7a62;
 }
 .products-container .pc-details {
   padding: 32px;
@@ -117,7 +117,6 @@ html > *, body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-y: scroll;
 }
 .products-container .pc-details .pcd-infos img {
   padding: 16px;
@@ -129,7 +128,7 @@ html > *, body > * {
           flex: 1;
 }
 .products-container .pc-details .form-group {
-  width: 100%;
+  max-width: 100%;
   margin: 16px auto;
 }
 .products-container .pc-details .form-group label {
@@ -162,12 +161,23 @@ html > *, body > * {
 .products-container .pc-details .form-group select {
   max-width: 150px;
 }
+.products-container .pc-details .form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .products-container .pc-details .btn {
   border: 0;
-  background-color: #7c92d0;
-  color: #eceff8;
   padding: 5px 10px;
   font-size: 1.1em;
   margin: 30px auto;
   display: block;
+}
+.products-container .pc-details .btn.btn-save {
+  background-color: #324ecd;
+  color: #eaedfa;
+}
+.products-container .pc-details .btn.btn-remove {
+  background-color: #e91640;
+  color: #fde8ec;
 }

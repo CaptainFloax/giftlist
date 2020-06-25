@@ -45,7 +45,6 @@
 
         .pcd-infos{
             display: flex;
-            overflow-y: scroll;
             img{
                 padding: styles.$s-m;
                 max-height: 200px;
@@ -57,7 +56,7 @@
         }
 
         .form-group{
-            width: 100%;
+            max-width: 100%;
             margin: styles.$s-m auto;
             label{
                 display: block;
@@ -90,14 +89,26 @@
             }
         }
 
+        .form-actions{
+            display: flex;
+        }
+
         .btn{
             border: 0;
-            background-color: styles.color(primary, 500);
-            color: styles.color(primary, 100);
             padding: 5px 10px;
             font-size: 1.1em;
             margin: 30px auto;
             display: block;
+
+            &.btn-save{
+                background-color: styles.color(primary, 500);
+                color: styles.color(primary, 100);
+            }
+
+            &.btn-remove{
+                background-color: styles.color(tertiary, 500);
+                color: styles.color(tertiary, 100);
+            }
         }
     }
 }

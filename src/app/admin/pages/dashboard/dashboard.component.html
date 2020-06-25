@@ -10,7 +10,7 @@
     <div class="pc-details">
         <h1>{{product.name}}</h1>
         <div class="pcd-infos">
-            <img src="../../../../assets/photos/{{product.cat[0]}}/{{product.img}}">
+            <img src="../../../../assets/photos/{{product.img}}">
             <form (ngSubmit)="saveUser()">
                 <div class="form-group">
                     <label for="img">Image</label>
@@ -44,11 +44,13 @@
                     <select
                         name="product"
                         id="cat"
-                        [(ngModel)]="product.cat"
-                        [ngModelOptions]="{standalone: true}">
+                        (change)="changeCat()"
+                        [(ngModel)]="product.myCat"
+                        [ngModelOptions]="{standalone: true}"
+                        [compareWith]="compareFn">
                         <option
                             [ngValue]="cat"
-                            *ngFor="let cat of categories">{{cat.name}}</option>
+                            *ngFor="let cat of categories" >{{cat.name}}</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -106,7 +108,10 @@
                         [ngModelOptions]="{standalone: true}"/>
                     <label for="part" class="inline">Participation autorisée</label>
                 </div>
-                <button type="submit" class="btn btn-save">Sauvegarder</button>
+                <div class="form-actions">
+                    <button *ngIf="!creation" type="text" (click)="removeProduct()" class="btn btn-remove">Supprimer</button>
+                    <button type="submit" class="btn btn-save">Sauvegarder</button>
+                </div>
             </form>
         </div>
     </div>

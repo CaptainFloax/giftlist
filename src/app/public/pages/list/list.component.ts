@@ -24,7 +24,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(environment._apiurl+'/products')
             .subscribe(products => {
-
                 this.products = products;
                 this.filteredProducts = this.products;
                 this.p = this.products[0];

@@ -18,18 +18,18 @@
     </div>
     <div class="lc-content">
         <div class="lcc-infos">
-            <p class="i-cat c-{{p.cat[0]}}">{{p.cat[0]}}</p>
+            <p class="i-cat c-{{p.cat}}">{{p.cat}}</p>
             <h2 class="i-name">{{p.name}}</h2>
             <p class="i-desc">{{p.description}}</p>
             <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
             <button class="i-btn"><i class="eva eva-flash-outline"></i> Je veux l'offrir</button>
         </div>
-        <div class="lcc-visuel" [style.background]="'url(../../../../assets/photos/' + p.cat[0]+ '/' + p.img + ')'">
+        <div class="lcc-visuel" [style.background]="'url(../../../../assets/photos/' + p.img + ')'">
         </div>
     </div>
     <div class="lc-products" #productsList>
         <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of products; let i = index">
-            <div class="pc-cat {{product.cat[0]}}">
+            <div class="pc-cat {{product.tag}}">
                 <i class="eva eva-pantone-outline"></i>
             </div>
             <div class="pc-content">
