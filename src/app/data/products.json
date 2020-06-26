@@ -1,14 +1,16 @@
 {
     "products": [
         {
-            "img": "001.png",
+            "img": "bath/001.jpg",
             "name": "Produit 1",
             "description": "Lorem Ipsum dolor sit amet",
             "price": 12.3,
             "shop": "magasin",
             "isBought": true,
-            "cat": ["all","bath","security","dodo","games","meal","clothes","others"],
+            "cat": "Bain",
+            "tag": "bath",
             "link": "https://google.com",
+            "quantity": 1,
             "participation": false
         },
         {
@@ -29,7 +31,8 @@
             "price": 10.99,
             "shop": "Les petits raffineurs",
             "isBought": false,
-            "cat": ["bath"],
+            "cat": "Bain",
+            "tag": "bath",
             "link": "https://www.lespetitsraffineurs.com/les-trottineurs/700-puzzle-de-bain.html?gclid=Cj0KCQjw-r71BRDuARIsAB7i_QMLFYRSfaKQ3VyawV4REIVQSAM69aWHgUoSrBZrnS4lNoTYvw3xzWcaAkMWEALw_wcB",
             "participation": false
         },
