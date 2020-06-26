@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   @ViewChild('productsList') elPList: ElementRef;
   products: any;
   categories: any[] = cat.categories;
-  filteredProducts: any;
+  fp: any;
   activeFilter: string = "all";
   p: any = new Product();
   i: number = 0;
@@ -25,9 +25,17 @@ export class ListComponent implements OnInit {
     this.http.get(environment._apiurl+'/products')
             .subscribe(products => {
                 this.products = products;
-                this.filteredProducts = this.products;
+                this.fp = this.products;
                 this.p = this.products[0];
             });
+  }
+
+  doWeGet(b: boolean){
+    if(b){
+      this.fp = this.products.filter(item => item.isBought);
+    }else{
+      this.fp = this.products.filter(item => !item.isBought);
+    }
   }
 
   showProduct(p: any, i: number){
@@ -38,12 +46,26 @@ export class ListComponent implements OnInit {
       });
     }else{
       this.elPList.nativeElement.scrollTo({
-        left: -i* 200,
+        left: i* 100,
         behavior: 'smooth'
       });
     }
     this.p = p;
     this.i = i;
+  }
+
+  filterProducts(cat: string){
+    this.fp = this.products.filter(item => item.cat.includes(cat));
+    this.activeFilter = cat;
+  }
+
+  resetFilters(){
+    this.fp = this.products;
+    this.activeFilter = "all";
+  }
+
+  isActive(tag: string){
+    return this.activeFilter === tag;
   }
 
 }

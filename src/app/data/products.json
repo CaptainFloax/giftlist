@@ -14,14 +14,16 @@
             "participation": false
         },
         {
-            "img": "002.png",
+            "img": "bath/001.jpg",
             "name": "Baignoire sur pieds",
-            "description": "Baignoire sur pieds",
-            "price": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas a libero mattis. Mauris ac felis eget arcu.",
+            "price": 12,
             "shop": "-",
             "isBought": true,
-            "cat": ["bath"],
-            "link": "",
+            "cat": ["Bain"],
+            "tag": "bath",
+            "link": "-",
+            "quantity": 1,
             "participation": false
         },
         {

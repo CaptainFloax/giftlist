@@ -4,21 +4,33 @@
             <img src="../../../../assets/graphics/logo/logo.svg"/>
         </div>
         <div class="nav">
-            <p>Découvrez</p>
-            <h1>La Liste de naissance</h1>
-            <div class="n-info weneed">
+            <p>Vous pouvez</p>
+            <h1>Filtrez la liste</h1>
+            <!--<div class="n-info weneed">
                 <p class="w-text">Ce qui nous ferait plaisir</p>
-                <p class="w-nb">22</p>
+                <p class="w-nb" (click)="doWeGet(false)">Filtrer</p>
             </div>
             <div class="n-info weneed">
-                <p class="w-text">Ce qui nous ferait plaisir</p>
-                <p class="w-nb">22</p>
-            </div>
+                <p class="w-text">Ce que l'on a déjà</p>
+                <p class="w-nb" (click)="doWeGet(true)">Filtrer</p>
+            </div>-->
+        </div>
+        <div class="l-filters">
+            <ul class="f-cat">
+                <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">
+                    <i class="eva eva-list"></i>
+                    <p>Tous les produits</p>
+                </li>
+                <li *ngFor="let cat of categories" [ngClass]="{'active': isActive(cat.tag)}" (click)="filterProducts(cat.tag)">
+                    <i class="eva eva-loader-outline"></i>
+                    <p>{{cat.name}}</p>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="lc-content">
         <div class="lcc-infos">
-            <p class="i-cat c-{{p.cat}}">{{p.cat}}</p>
+            <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>
             <h2 class="i-name">{{p.name}}</h2>
             <p class="i-desc">{{p.description}}</p>
             <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
@@ -28,14 +40,13 @@
         </div>
     </div>
     <div class="lc-products" #productsList>
-        <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of products; let i = index">
+        <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
             <div class="pc-cat {{product.tag}}">
                 <i class="eva eva-pantone-outline"></i>
             </div>
             <div class="pc-content">
                 <div class="pcc-text">
                     <p class="ct-name">{{product.name}}</p>
-                    <p class="ct-desc">{{product.description}}</p>
                 </div>
             </div>
             <div class="pcc-actions">
