@@ -45,6 +45,7 @@
 
         .pcd-infos{
             display: flex;
+            height: calc(100vh - 150px);
             img{
                 padding: styles.$s-m;
                 max-height: 200px;

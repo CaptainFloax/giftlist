@@ -9,7 +9,7 @@
     </div>
     <div class="pc-details">
         <h1>{{product.name}}</h1>
-        <div class="pcd-infos">
+        <div class="pcd-infos" *ngIf="!worked; else waiting">
             <img src="../../../../assets/photos/{{product.img}}">
             <form (ngSubmit)="saveUser()">
                 <div class="form-group">
@@ -114,5 +114,11 @@
                 </div>
             </form>
         </div>
+
+        <ng-template #waiting>
+            <div class="pcd-infos">
+                Sélectionner un produit à modifier ou ajouter un produit pour commencer...
+            </div>
+        </ng-template>
     </div>
 </div>

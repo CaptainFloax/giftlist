@@ -117,6 +117,7 @@ html > *, body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: calc(100vh - 150px);
 }
 .products-container .pc-details .pcd-infos img {
   padding: 16px;

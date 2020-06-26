@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   categories: Category[] = cat.categories;
   creation: boolean = false;
   sCat: Category = new Category();
+  worked: boolean = true;
 
   constructor(private http: HttpClient) {
 
@@ -25,12 +26,13 @@ export class DashboardComponent implements OnInit {
     this.http.get(environment._apiurl+'/products')
             .subscribe(products => {
                 this.products = products;
-                this.selectProduct(products[0]);
+                this.product = products[0];
             });
   }
 
   selectProduct(p: any){
     this.creation = false;
+    this.worked = false;
     this.product = p;
     this.product.myCat = {name: p.cat, tag: p.tag} ;
     this.sCat.name = p.cat;
@@ -44,6 +46,7 @@ export class DashboardComponent implements OnInit {
   createProduct(){
     this.creation = true;
     this.product = new Product();
+    this.worked = false;
   }
 
   changeCat(){
@@ -52,7 +55,10 @@ export class DashboardComponent implements OnInit {
   }
 
   removeProduct(){
-    this.http.post(environment._apiurl + '/delete'+ this.product.pid, {}).subscribe();
+    this.http.post(environment._apiurl + '/delete/'+ this.product.pid, {}).subscribe();
+    console.log('DELETE');
+    this.worked = true;
+    this.refreshData();
   }
 
   saveUser(){
@@ -85,5 +91,15 @@ export class DashboardComponent implements OnInit {
         "participation": this.product.participation
       }).subscribe();
     }
+    this.worked = true;
+    this.refreshData();
+  }
+
+  refreshData(){
+    this.http.get(environment._apiurl+'/products')
+            .subscribe(products => {
+                this.products = products;
+                this.product = products[0];
+            });
   }
 }
