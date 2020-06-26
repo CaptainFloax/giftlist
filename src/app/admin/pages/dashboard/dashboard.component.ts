@@ -62,35 +62,7 @@ export class DashboardComponent implements OnInit {
   }
 
   saveUser(){
-    if(this.creation){
-      this.http.post(environment._apiurl+'/product', {
-        "img": this.product.img,
-        "name": this.product.name,
-        "description": this.product.description,
-        "price": this.product.price,
-        "shop": this.product.shop,
-        "isBought": this.product.isBought,
-        "cat": this.product.cat,
-        "tag": this.product.tag,
-        "link": this.product.link,
-        "quantity": this.product.quantity,
-        "participation": this.product.participation
-      }).subscribe();
-    }else{
-      this.http.post(environment._apiurl+'/update/product/'+this.product.pid, {
-        "img": this.product.img,
-        "name": this.product.name,
-        "description": this.product.description,
-        "price": this.product.price,
-        "shop": this.product.shop,
-        "isBought": this.product.isBought,
-        "cat": this.product.cat,
-        "tag": this.product.tag,
-        "link": this.product.link,
-        "quantity": this.product.quantity,
-        "participation": this.product.participation
-      }).subscribe();
-    }
+    this.http.put(environment._apiurl+'/save', this.product).subscribe();
     this.worked = true;
     this.refreshData();
   }

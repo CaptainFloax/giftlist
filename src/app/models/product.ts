@@ -2,11 +2,11 @@ import { Category } from './category';
 
 export class Product {
     pid: number;
+    uuid: number;
     img: string;
     name: string;
     description: string;
     price: number;
-    paid: number;
     isBought: boolean;
     cat: string;
     tag: string;
