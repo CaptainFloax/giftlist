@@ -44,11 +44,6 @@ export class ListComponent implements OnInit {
         left: i* 200,
         behavior: 'smooth'
       });
-    }else{
-      this.elPList.nativeElement.scrollTo({
-        left: i* 100,
-        behavior: 'smooth'
-      });
     }
     this.p = p;
     this.i = i;
