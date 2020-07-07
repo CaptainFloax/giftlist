@@ -6,23 +6,15 @@
         <div class="nav">
             <p>Vous pouvez</p>
             <h1>Filtrez la liste</h1>
-            <!--<div class="n-info weneed">
-                <p class="w-text">Ce qui nous ferait plaisir</p>
-                <p class="w-nb" (click)="doWeGet(false)">Filtrer</p>
-            </div>
-            <div class="n-info weneed">
-                <p class="w-text">Ce que l'on a déjà</p>
-                <p class="w-nb" (click)="doWeGet(true)">Filtrer</p>
-            </div>-->
         </div>
         <div class="l-filters">
             <ul class="f-cat">
                 <li [ngClass]="{'active': isActive('all')}" (click)="resetFilters()">
-                    <i class="eva eva-list"></i>
+                    <i class="uil uil-list-ui-alt"></i>
                     <p>Tous les produits</p>
                 </li>
                 <li *ngFor="let cat of categories" [ngClass]="{'active': isActive(cat.tag)}" (click)="filterProducts(cat.tag)">
-                    <i class="eva eva-loader-outline"></i>
+                    <i class="uil {{cat.icon}}"></i>
                     <p>{{cat.name}}</p>
                 </li>
             </ul>
@@ -41,18 +33,14 @@
     </div>
     <div class="lc-products" #productsList>
         <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
-            <div class="pc-cat {{product.tag}}">
-                <i class="eva eva-pantone-outline"></i>
-            </div>
             <div class="pc-content">
                 <div class="pcc-text">
+                    <p class="ct-index"><span>{{i}}</span> {{product.cat}}</p>
                     <p class="ct-name">{{product.name}}</p>
                 </div>
             </div>
-            <div class="pcc-actions">
-                <ng-template #offert>
-                    <button class="btn btn-success">Offert <i class="eva eva-checkmark-outline"></i></button>
-                </ng-template>
+            <div class="pcc-show">
+                <button (click)="showProduct(product, i)" class="btn btn-show">Afficher</button>
             </div>
         </div>
     </div>

@@ -44,6 +44,7 @@ html > *, body > * {
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
+  position: relative;
 }
 .list-container .lc-hero {
   -webkit-box-flex: 2;
@@ -57,10 +58,15 @@ html > *, body > * {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   border-right: 1px solid #d6dcf5;
+}
+@media only screen and (max-width: 800px) {
+  .list-container .lc-hero {
+    display: none;
+  }
 }
 .list-container .lc-hero .header {
   margin-top: 0;
@@ -70,8 +76,8 @@ html > *, body > * {
   max-height: 70px;
 }
 .list-container .lc-hero .nav {
+  margin: 0 20px;
   margin-top: 20px;
-  margin: 0 auto;
 }
 .list-container .lc-hero .nav p {
   font-size: 12px;
@@ -141,32 +147,23 @@ html > *, body > * {
   text-align: center;
   border-radius: 40px;
   padding: 0;
-  width: 65px;
+  min-width: 30%;
   color: #575c75;
   margin: 0 5px;
   -webkit-transition: ease-in 200ms;
   transition: ease-in 200ms;
 }
 .list-container .lc-hero .l-filters .f-cat li i {
-  font-size: 30px;
-  padding: 10px;
-  border-radius: 50px;
-  width: 30px;
-  height: 30px;
+  font-size: 40px;
   display: block;
-  background-color: white;
-  margin: 5px auto;
-  border: 1px solid #f0f1f4;
 }
 .list-container .lc-hero .l-filters .f-cat li p {
   margin: 10px 0 30px 0;
-  font-size: 0.6em;
+  font-size: 0.8em;
   font-weight: 600;
 }
 .list-container .lc-hero .l-filters .f-cat li.active, .list-container .lc-hero .l-filters .f-cat li:hover {
-  color: #fde8ec;
-  background-color: #e91640;
-  border: 0;
+  color: #e91640;
 }
 .list-container .lc-hero .l-filters .f-cat li.active i, .list-container .lc-hero .l-filters .f-cat li:hover i {
   color: #e91640;
@@ -195,6 +192,14 @@ html > *, body > * {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media only screen and (max-width: 800px) {
+  .list-container .lc-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .list-container .lc-content .lcc-infos {
   color: #575c75;
@@ -306,14 +311,22 @@ html > *, body > * {
   position: relative;
   z-index: 5;
 }
+@media only screen and (max-width: 800px) {
+  .list-container .lc-content .lcc-visuel {
+    max-width: 100%;
+    flex-order: 1;
+  }
+}
 .list-container .lc-products {
   min-width: 100%;
-  height: 200px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  position: fixed;
+  bottom: 0;
 }
 .list-container .lc-products .lp-card {
   min-height: 120px;
@@ -332,6 +345,7 @@ html > *, body > * {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: relative;
 }
 .list-container .lc-products .lp-card:hover {
   cursor: pointer;
@@ -393,17 +407,34 @@ html > *, body > * {
 .list-container .lc-products .lp-card .pc-content .pcc-text {
   min-width: 150px;
 }
+.list-container .lc-products .lp-card .pc-content .pcc-text .ct-index {
+  color: #d6dcf5;
+  margin-bottom: 5px;
+}
+.list-container .lc-products .lp-card .pc-content .pcc-text .ct-index span {
+  font-size: 35px;
+}
 .list-container .lc-products .lp-card .pc-content .pcc-text .ct-name {
   margin: 0;
   margin-bottom: 5px;
   color: #414558;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 25px;
 }
-.list-container .lc-products .lp-card .pc-content .pcc-text .ct-desc {
-  margin: 0;
-  font-size: 0.8rem;
-  color: #6c7393;
+.list-container .lc-products .lp-card .pcc-show {
+  text-align: center;
+}
+.list-container .lc-products .lp-card .pcc-show .btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 0;
+  font-weight: 500;
+  font-size: 0.8em;
+  border-radius: 20px;
+}
+.list-container .lc-products .lp-card .pcc-show .btn.btn-show {
+  background-color: #fee2cd;
+  color: #af4e04;
 }
 .list-container .lc-products .lp-card .pcc-actions {
   margin-top: auto;

@@ -2,31 +2,38 @@
     "categories": [
         {
             "name": "Bain",
-            "tag": "bath"
+            "tag": "bath",
+            "icon": "uil-bath"
         },
         {
             "name": "Securité",
-            "tag": "security"
+            "tag": "security",
+            "icon": "uil-baby-carriage"
         },
         {
             "name": "Dodo",
-            "tag": "dodo"
+            "tag": "dodo",
+            "icon": "uil-bed"
         },
         {
             "name": "Jeux & Eveil",
-            "tag": "games"
+            "tag": "games",
+            "icon": "uil-basketball"
         },
         {
             "name": "Repas",
-            "tag": "meal"
+            "tag": "meal",
+            "icon": "uil-utensils-alt"
         },
         {
             "name": "Vétements",
-            "tag": "clothes"
+            "tag": "clothes",
+            "icon": "uil-kid"
         },
         {
             "name": "Divers",
-            "tag": "others"
+            "tag": "others",
+            "icon": "uil-comment-image"
         }
     ]
 }
