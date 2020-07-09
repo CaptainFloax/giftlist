@@ -18,6 +18,12 @@ export class ListComponent implements OnInit {
   activeFilter: string = "all";
   p: any = new Product();
   i: number = 0;
+  sp: any = {
+    option: "",
+    name: "",
+    email: "",
+    product: {}
+  }
 
   constructor(private http: HttpClient, public dataService: DataService) { }
 
@@ -50,7 +56,7 @@ export class ListComponent implements OnInit {
   }
 
   filterProducts(cat: string){
-    this.fp = this.products.filter(item => item.cat.includes(cat));
+    this.fp = this.products.filter(item => item.tag.includes(cat));
     this.activeFilter = cat;
   }
 
@@ -61,6 +67,17 @@ export class ListComponent implements OnInit {
 
   isActive(tag: string){
     return this.activeFilter === tag;
+  }
+
+  selectOption(type: string){
+    this.sp.option = type;
+  }
+
+  offerProduct(){
+    this.sp.product = this.p;
+    this.p.isBought = true;
+    this.http.put(environment._apiurl+'/save', this.p).subscribe();
+    console.log(this.sp);
   }
 
 }

@@ -5,6 +5,30 @@
     display: flex;
     flex-flow: wrap;
     position: relative;
+
+    .header{
+        margin-top: 0;
+        padding: styles.$s-m;
+        width: 100%;
+        display: flex;
+
+        img{
+            max-height: 70px;
+        }
+
+        .nav{
+            margin-left: auto;
+            align-content: content;
+            .n-items{
+                @include styles.resetList();
+                display: flex;
+                .ni-item{
+                    margin: 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
     
     .lc-hero{
         flex: 2;
@@ -15,14 +39,6 @@
         border-right: 1px solid styles.color(primary, 200);
         @include styles.bpFactory($max: 800px ){
             display: none;
-        }
-
-        .header{
-            margin-top: 0;
-            padding: styles.$s-m;
-            img{
-                max-height: 70px;
-            }
         }
 
         .nav{
@@ -137,13 +153,164 @@
     .lc-content{
         flex: 5;
         min-width: 60%;
-        height: 70vh;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
+        margin-bottom: 500px;
         @include styles.bpFactory($max: 800px ){flex-direction: column;}
 
+        .c-pinfos{
+            display: flex;
+            padding: styles.$s-o;
+            .cpi-img{
+                max-height: 300px;
+                margin-right: 20px;
+                @include styles.addShadow(1);
+            }
+
+            .cpi-text{
+                .i-cat{
+                    padding: 3px styles.$s-a;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    @each $key, $value in styles.$categories{
+                        &.c-#{$key}{
+                            color: styles.colorcat($key, 600);
+                            background-color: styles.colorcat($key, 200);
+                        }
+                    }
+                }
+
+                .i-name{
+                    margin: 0;
+                    font-size: 40px;
+                }
+    
+                .i-desc{
+                    color: styles.color(neutral, 500);
+                    margin: 5px 0;
+                }
+    
+                .i-price{
+                    font-style: italic;
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .c-pform{
+            padding: 10px styles.$s-o;
+            display: flex;
+            align-items:flex-start;
+            align-content:flex-start;
+
+            h2{
+                margin: 0;
+                margin-left: styles.$s-o;
+            }
+            
+            .pf-options{
+                display: flex;
+                .pfo{
+                    text-align: center;
+                    padding: styles.$s-o styles.$s-m;
+                    margin: 0 styles.$s-m;
+                    max-width: 100px;
+                    background-color: white;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    @include styles.addShadow(1);
+
+                    i{
+                        font-size: 40px;
+                    }
+
+                    &.pfo-byhand{
+                        color: styles.color(tertiary, 500);
+
+                        &.active, &:hover{
+                            background-color: styles.color(tertiary, 200);
+                            color: styles.color(tertiary, 800);
+                        }
+                    }
+                    &.pfo-paypal{
+                        color: styles.color(accent, 500);
+                        &.active, &:hover{
+                            background-color: styles.color(accent, 200);
+                            color: styles.color(tertiary, 800);
+                        }
+                    }
+                    &.pfo-rib{
+                        color: styles.color(primary, 500);
+                        &.active, &:hover{
+                            background-color: styles.color(primary, 200);
+                            color: styles.color(primary, 800);
+                        }
+                    }
+                }
+            }
+
+            .pf-inputs{
+                margin: 0 auto;
+                .form-group{
+                    margin-bottom: styles.$s-o;
+                    min-width: 350px;
+                    input, label{
+                        display: block;
+                        margin: 0;
+                        width: 100%;
+                    }
+
+                    label{
+                        font-size: 0.9em;
+                        color: styles.color(neutral, 500);
+                        font-weight: 700;
+                    }
+
+                    input{
+                        margin-top: styles.$s-a;
+                        border: none;
+                        @include styles.addShadow(1);
+                        padding: styles.$s-a;
+                    }
+                }
+                .i-btn{
+                    @include styles.resetBtn();
+                    background-color: styles.color(accent, 500);
+                    border-radius: 20px;
+                    padding: 5px 15px;
+                    padding-left: 5px;
+                    font-size: 18px;
+                    color: styles.color(accent, 0);
+                    font-size: 1em;
+    
+                    &:hover{
+                        cursor: pointer;
+                        i{
+                            transform: scale(0.9);
+                        }
+                        
+                    }
+    
+                    i{
+                        transition: ease-in 200ms;
+                        border-radius: 20px;
+                        padding: 5px;
+                        margin-right: 10px;
+                        font-size: 20px;
+                        color: styles.color(accent, 600);
+                        background-color: styles.color(accent, 0);
+                    }
+                }
+            }
+
+
+        }
+
+        .c-feedback{
+            margin: styles.$s-o;
+        }
+
+        /*
         .lcc-infos{
             color: styles.color(neutral, 600);
             padding: styles.$s-o;
@@ -152,35 +319,6 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-
-            .i-cat{
-                padding: 3px styles.$s-a;
-                font-size: 14px;
-                border-radius: 5px;
-                text-transform: uppercase;
-                display: inline-block;
-                @each $key, $value in styles.$categories{
-                    &.c-#{$key}{
-                        color: styles.colorcat($key, 600);
-                        background-color: styles.colorcat($key, 200);
-                    }
-                }
-            }
-
-            .i-name{
-                margin: 0;
-                font-size: 40px;
-            }
-
-            .i-desc{
-                color: styles.color(neutral, 500);
-                margin: 5px 0;
-            }
-
-            .i-price{
-                font-style: italic;
-                margin-top: 5px;
-            }
 
             .i-btn{
                 @include styles.resetBtn();
@@ -223,6 +361,7 @@
             z-index: 5;
             @include styles.bpFactory($max: 800px ){max-width: 100%;flex-order:1}
         }
+        */
     }
 
     .lc-products{

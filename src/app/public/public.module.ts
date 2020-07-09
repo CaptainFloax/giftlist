@@ -14,6 +14,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { PanierComponent } from './pages/panier/panier.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { ListComponent } from './pages/list/list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ListComponent } from './pages/list/list.component';
   imports: [
     BrowserModule,
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    FormsModule
   ]
 })
 export class PublicModule { }

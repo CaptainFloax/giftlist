@@ -1,8 +1,15 @@
 <div class="list-container">
-    <div class="lc-hero">
-        <div class="header">
-            <img src="../../../../assets/graphics/logo/logo.svg"/>
-        </div>
+    <header class="header">
+        <img src="../../../../assets/graphics/logo/logo.svg"/>
+        <nav class="nav">
+            <ul class="n-items">
+                <li class="ni-item">La cagnotte</li>
+                <li class="ni-item">La liste</li>
+                <li class="ni-item">Pronostics</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="lc-hero">
         <div class="nav">
             <p>Vous pouvez</p>
             <h1>Filtrez la liste</h1>
@@ -19,19 +26,59 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="lc-content">
-        <div class="lcc-infos">
+    </section>
+    <section class="lc-content">
+        <div class="c-pinfos">
+            <img src="../../../../assets/photos/{{p.img}}" alt="product visual" class="cpi-img"/>
+            <div class="cpi-text">
+                <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>
+                <h2 class="i-name">{{p.name}}</h2>
+                <p class="i-desc">{{p.description}}</p>
+                <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
+            </div>
+        </div>
+        <div class="c-pform" *ngIf="!p.isBought else offered">
+            <h2>Je réserve cet article :</h2>
+            <div class="pf-options">
+                <div class="pfo pfo-byhand" [class.active]="sp.option === 'byhand'" (click)="selectOption('byhand')">
+                    <i class="uil uil-truck"></i>
+                    <p>Offrir en main propre</p>
+                </div>
+                <div class="pfo pfo-paypal" [class.active]="sp.option === 'paypal'" (click)="selectOption('paypal')">
+                    <i class="uil uil-telegram-alt"></i>
+                    <p>Participer via paypal</p>
+                </div>
+                <div class="pfo pfo-rib" [class.active]="sp.option === 'rib'" (click)="selectOption('rib')">
+                    <i class="uil uil-envelope-search"></i>
+                    <p>Demander un RIB</p>
+                </div>
+            </div>
+            <div class="pf-inputs">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input [(ngModel)]="sp.name" name="name" placeholder="Entrez votre nom"/>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="sp.email" name="name" placeholder="Entrez votre email"/>
+                </div>
+                <button class="i-btn" (click)="offerProduct()"><i class="eva eva-flash-outline"></i> Je veux l'offrir !</button>
+            </div>
+        </div>
+        <ng-template #offered>
+            <p class="c-feedback">Ce produit a déjà été offert ! Vous ne trouvez pas votre bonheur dans la liste ? Envoyez nous un <a routerLink="/contact">message</a> pour savoir ce qui nous ferait plaisir !</p>
+        </ng-template>
+        <!--<div class="lcc-infos">
             <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>
             <h2 class="i-name">{{p.name}}</h2>
             <p class="i-desc">{{p.description}}</p>
             <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
-            <button class="i-btn"><i class="eva eva-flash-outline"></i> Je veux l'offrir</button>
+            <button class="i-btn" routerLink="basket"><i class="eva eva-flash-outline"></i> Je veux l'offrir</button>
         </div>
         <div class="lcc-visuel" [style.background]="'url(../../../../assets/photos/' + p.img + ')'">
-        </div>
-    </div>
-    <div class="lc-products" #productsList>
+        </div>-->
+    </section>
+    <section class="lc-products" #productsList>
         <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
             <div class="pc-content">
                 <div class="pcc-text">
@@ -43,5 +90,5 @@
                 <button (click)="showProduct(product, i)" class="btn btn-show">Afficher</button>
             </div>
         </div>
-    </div>
+    </section>
 </div>
