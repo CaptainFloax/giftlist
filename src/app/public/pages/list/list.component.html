@@ -34,7 +34,7 @@
                 <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>
                 <h2 class="i-name">{{p.name}}</h2>
                 <p class="i-desc">{{p.description}}</p>
-                <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
+                <p class="i-price">{{p.price}}€ - <a *ngIf="p.link != '-'" href="{{p.link}}" target="_blank">Accéder à la boutique</a></p>
             </div>
         </div>
         <div class="c-pform" *ngIf="!p.isBought else offered">
@@ -66,7 +66,10 @@
             </div>
         </div>
         <ng-template #offered>
-            <p class="c-feedback">Ce produit a déjà été offert ! Vous ne trouvez pas votre bonheur dans la liste ? Envoyez nous un <a routerLink="/contact">message</a> pour savoir ce qui nous ferait plaisir !</p>
+            <div class="c-feedback">
+                <img class="cf-img" src="../../../assets/graphics/illu/03.svg" alt=""/>
+                <p class="cf-text">Ce produit a déjà été offert ! Vous ne trouvez pas votre bonheur dans la liste ? Envoyez nous un <a routerLink="/contact">message</a> pour savoir ce qui nous ferait plaisir !</p>
+            </div>
         </ng-template>
         <!--<div class="lcc-infos">
             <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>

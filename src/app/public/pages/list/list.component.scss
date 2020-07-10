@@ -158,6 +158,9 @@
 
         .c-pinfos{
             display: flex;
+            @include styles.bpFactory($max: 750px){
+                flex-direction: column;
+            }
             padding: styles.$s-o;
             .cpi-img{
                 max-height: 300px;
@@ -207,6 +210,14 @@
                 margin: 0;
                 margin-left: styles.$s-o;
             }
+
+            @include styles.bpFactory($max: 750px){
+                flex-direction: column;
+                
+                h2{
+                    margin: 10px 0;
+                }
+            }
             
             .pf-options{
                 display: flex;
@@ -251,6 +262,10 @@
 
             .pf-inputs{
                 margin: 0 auto;
+                @include styles.bpFactory($max: 750px){
+                    margin-top: styles.$s-o;
+                }
+
                 .form-group{
                     margin-bottom: styles.$s-o;
                     min-width: 350px;
@@ -307,7 +322,17 @@
         }
 
         .c-feedback{
-            margin: styles.$s-o;
+            margin: styles.$s-o auto;
+            max-width: 500px;
+            text-align: center;
+
+            .cf-img{
+                max-width: 200px;
+            }
+
+            .cf-text{
+                font-weight: 800;
+            }
         }
 
         /*
