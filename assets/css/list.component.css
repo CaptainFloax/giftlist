@@ -45,6 +45,7 @@ html > *, body > * {
   -ms-flex-flow: wrap;
       flex-flow: wrap;
   position: relative;
+  height: 100%;
 }
 .list-container .header {
   margin-top: 0;
@@ -53,6 +54,7 @@ html > *, body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-bottom: 1px solid #d6dcf5;
 }
 .list-container .header img {
   max-height: 70px;
@@ -77,10 +79,11 @@ html > *, body > * {
   text-transform: uppercase;
 }
 .list-container .lc-hero {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  height: 70vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: calc(100% - 100px);
+  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,6 +98,9 @@ html > *, body > * {
 }
 @media only screen and (max-width: 800px) {
   .list-container .lc-hero {
+    display: none;
+  }
+  .list-container .lc-hero .l-plist {
     display: none;
   }
 }
@@ -197,12 +203,80 @@ html > *, body > * {
 .list-container .lc-hero .l-filters .f-cat li:hover {
   cursor: pointer;
 }
+.list-container .lc-hero .l-plist {
+  max-height: 100%;
+}
+.list-container .lc-hero .l-plist .lp-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #eaedfa;
+}
+.list-container .lc-hero .l-plist .lp-product.active, .list-container .lc-hero .l-plist .lp-product:hover {
+  cursor: pointer;
+  background-color: #f7f8fd;
+}
+.list-container .lc-hero .l-plist .lp-product .p-img {
+  height: 70px;
+  width: 100px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  border-radius: 20px;
+  margin-right: 16px;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos p {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #575c75;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat {
+  padding: 3px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-bath {
+  color: #4f7d59;
+  background-color: #e0ebe2;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-security {
+  color: #9f332d;
+  background-color: #f4d9d7;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-dodo {
+  color: #a502ca;
+  background-color: #f5cdfe;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-games {
+  color: #696663;
+  background-color: #e6e6e5;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-meal {
+  color: #4f7d6d;
+  background-color: #e0ebe7;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-clothes {
+  color: #7d724f;
+  background-color: #ebe8e0;
+}
+.list-container .lc-hero .l-plist .lp-product .p-infos .pi-cat.c-others {
+  color: #7d614f;
+  background-color: #ebe4e0;
+}
 .list-container .lc-content {
   -webkit-box-flex: 5;
       -ms-flex: 5;
           flex: 5;
   min-width: 60%;
-  margin-bottom: 500px;
+  max-height: calc(100% - 100px);
+  background-color: #f7f8fd;
   /*
   .lcc-infos{
       color: styles.color(neutral, 600);
@@ -262,6 +336,7 @@ html > *, body > * {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-bottom: 500px;
   }
 }
 .list-container .lc-content .c-pinfos {
@@ -478,6 +553,11 @@ html > *, body > * {
   scroll-behavior: smooth;
   position: fixed;
   bottom: 0;
+}
+@media only screen and (min-width: 800px) {
+  .list-container .lc-products {
+    display: none;
+  }
 }
 .list-container .lc-products .lp-card {
   min-height: 120px;

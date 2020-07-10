@@ -5,12 +5,14 @@
     display: flex;
     flex-flow: wrap;
     position: relative;
+    height: 100%;
 
     .header{
         margin-top: 0;
         padding: styles.$s-m;
         width: 100%;
         display: flex;
+        border-bottom: 1px solid styles.color(primary, 200);
 
         img{
             max-height: 70px;
@@ -31,14 +33,19 @@
     }
     
     .lc-hero{
-        flex: 2;
-        height: 70vh;
+        flex: 1;
+        height: calc(100% - 100px);
+        overflow: scroll;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         border-right: 1px solid styles.color(primary, 200);
         @include styles.bpFactory($max: 800px ){
             display: none;
+
+            .l-plist{
+                display: none;
+            }
         }
 
         .nav{
@@ -148,13 +155,66 @@
             }
         }
 
+        .l-plist{
+            max-height: 100%;
+
+            .lp-product{
+                display: flex;
+                padding: styles.$s-o;
+                align-items: center;
+                border-top: 1px solid styles.color(primary, 100);
+
+                &.active, &:hover{
+                    cursor: pointer;
+                    background-color: styles.color(primary, 0);
+
+                }
+                
+                .p-img{
+                    height: 70px;
+                    width: 100px;
+                    background-size: cover !important;
+                    background-repeat: no-repeat !important;
+                    border-radius: 20px;
+                    margin-right: styles.$s-m;
+                }
+
+                .p-infos{
+                    p{
+                        margin: 0;
+                        margin-bottom: styles.$s-a;
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: styles.color(neutral, 600);
+                    }
+                    .pi-cat{
+                        padding: 3px styles.$s-a;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        @each $key, $value in styles.$categories{
+                            &.c-#{$key}{
+                                color: styles.colorcat($key, 600);
+                                background-color: styles.colorcat($key, 200);
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+
+        }
+
     }
 
     .lc-content{
         flex: 5;
         min-width: 60%;
-        margin-bottom: 500px;
-        @include styles.bpFactory($max: 800px ){flex-direction: column;}
+        max-height: calc(100% - 100px);
+        background-color: styles.color(primary, 0);
+        @include styles.bpFactory($max: 800px ){flex-direction: column; margin-bottom: 500px;}
 
         .c-pinfos{
             display: flex;
@@ -397,6 +457,9 @@
         scroll-behavior: smooth;
         position: fixed;
         bottom: 0;
+        @include styles.bpFactory($min: 800px ){
+            display: none;
+        }
 
         .lp-card{
             min-height: 120px;

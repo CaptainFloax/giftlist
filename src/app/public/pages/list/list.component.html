@@ -26,6 +26,15 @@
                 </li>
             </ul>
         </div>
+        <div class="l-plist">
+            <div class="lp-product" [class.active]="product == p" (click)="showProduct(product,i)" *ngFor="let product of fp; let i = index">
+                <div class="p-img" [style.background]="'url(../../../../assets/photos/' + product.img + ')'"></div>
+                <div class="p-infos">
+                    <p class="pi-name">{{product.name}}</p>
+                    <p class="pi-cat c-{{product.tag}}">{{product.cat}}</p>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="lc-content">
         <div class="c-pinfos">
