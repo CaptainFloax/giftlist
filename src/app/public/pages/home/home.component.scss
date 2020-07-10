@@ -1,9 +1,9 @@
 @use '../../../../styles.scss';
 
 .home-container{
-    max-width: 100%;
+    max-width: 1400px;
     max-height: 100vh;
-    margin: 0;
+    margin: 0 auto;
 
     .h-content{
         padding: 20px;
@@ -77,6 +77,56 @@
                     border-radius: 2px;
                     padding: 10px 13px;
                     margin-bottom: 20px;
+                }
+            }
+        }
+
+        .categories{
+
+            h2{
+                font-size: 18px;
+                color: styles.color(primary, 700);
+            }
+            padding: 20px;
+            .f-cat{
+                display: flex;
+                flex-flow: wrap;
+                justify-content: space-between;
+                @include styles.resetList();
+                li{
+                    text-align: center;
+                    border-radius: 40px;
+                    padding: 0;
+                    color: styles.color(primary, 700);
+                    margin: 0 5px;
+                    transition: ease-in 200ms;
+
+                    i{
+                        font-size: 40px;
+                        display: block;
+                    }
+
+                    p{
+                        margin: 10px 0 30px 0;
+                        font-size: 0.8em;
+                        font-weight: 600;
+                    }
+    
+                    &.active, &:hover{
+                        color: styles.color(tertiary, 500);
+
+                        i{
+                            color: styles.color(tertiary, 500);
+                        }
+                    }
+    
+                    &:first-child{
+                        margin-left: 0;;
+                    }
+    
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }

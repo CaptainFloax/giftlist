@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as cat from '../../../data/categories.json';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  categories: any[] = cat.categories;
 
   titles: any = [
     'Bienvenue sur ma Chère Cigogne',

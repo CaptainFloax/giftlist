@@ -77,6 +77,8 @@ html > *, body > * {
 .list-container .header .nav .n-items .ni-item {
   margin: 10px;
   text-transform: uppercase;
+  color: #fa6f05;
+  font-weight: 600;
 }
 .list-container .lc-hero {
   -webkit-box-flex: 1;

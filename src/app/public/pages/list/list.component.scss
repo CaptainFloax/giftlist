@@ -27,6 +27,8 @@
                 .ni-item{
                     margin: 10px;
                     text-transform: uppercase;
+                    color: styles.color(accent, 500);
+                    font-weight: 600
                 }
             }
         }

@@ -15,6 +15,7 @@ import { PanierComponent } from './pages/panier/panier.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { ListComponent } from './pages/list/list.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     TopbarComponent,
     PanierComponent,
     AlertComponent,
-    ListComponent // Public Routes and Components declaration
+    ListComponent,
+    NavbarComponent // Public Routes and Components declaration
   ],
   imports: [
     BrowserModule,
