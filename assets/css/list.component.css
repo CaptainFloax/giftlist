@@ -343,7 +343,7 @@ html > *, body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 32px;
+  padding: 100px;
 }
 @media only screen and (max-width: 750px) {
   .list-container .lc-content .c-pinfos {
@@ -353,11 +353,41 @@ html > *, body > * {
             flex-direction: column;
   }
 }
-.list-container .lc-content .c-pinfos .cpi-img {
+@media only screen and (min-width: 800) {
+  .list-container .lc-content .c-pinfos {
+    padding: 32px;
+  }
+}
+.list-container .lc-content .c-pinfos .cpi-imgcontainer {
+  position: relative;
+  z-index: 1;
+}
+.list-container .lc-content .c-pinfos .cpi-imgcontainer:hover:before {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  border-radius: 10px;
+}
+.list-container .lc-content .c-pinfos .cpi-imgcontainer .cpi-img {
   max-height: 300px;
+  width: auto;
   margin-right: 20px;
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
           box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+  z-index: 9;
+  border-radius: 5px;
+}
+.list-container .lc-content .c-pinfos .cpi-imgcontainer:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -30px;
+  left: -30px;
+  background-color: #324ecd;
+  z-index: -1;
+  border-radius: 5px;
+  -webkit-transition: ease-in-out 300ms;
+  transition: ease-in-out 300ms;
 }
 .list-container .lc-content .c-pinfos .cpi-text .i-cat {
   padding: 3px 8px;
