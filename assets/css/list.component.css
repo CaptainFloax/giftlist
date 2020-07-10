@@ -45,7 +45,7 @@ html > *, body > * {
   -ms-flex-flow: wrap;
       flex-flow: wrap;
   position: relative;
-  height: 100%;
+  height: calc(100% - 100px);
 }
 .list-container .header {
   margin-top: 0;
@@ -84,8 +84,9 @@ html > *, body > * {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: calc(100% - 100px);
+  height: 100%;
   overflow: scroll;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,7 +278,7 @@ html > *, body > * {
       -ms-flex: 5;
           flex: 5;
   min-width: 60%;
-  max-height: calc(100% - 100px);
+  max-height: 100%;
   background-color: #f7f8fd;
   /*
   .lcc-infos{

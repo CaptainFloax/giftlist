@@ -77,6 +77,9 @@ export class ListComponent implements OnInit {
     this.sp.product = this.p;
     this.p.isBought = true;
     this.http.put(environment._apiurl+'/save', this.p).subscribe();
+    this.http.post(environment._apiurl + "/mail", this.sp)
+         .subscribe((data) => { });
+
     console.log(this.sp);
   }
 

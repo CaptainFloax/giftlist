@@ -5,7 +5,7 @@
     display: flex;
     flex-flow: wrap;
     position: relative;
-    height: 100%;
+    height: calc(100% - 100px);
 
     .header{
         margin-top: 0;
@@ -36,8 +36,9 @@
     
     .lc-hero{
         flex: 1;
-        height: calc(100% - 100px);
+        height: 100%;
         overflow: scroll;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -214,7 +215,7 @@
     .lc-content{
         flex: 5;
         min-width: 60%;
-        max-height: calc(100% - 100px);
+        max-height: 100%;
         background-color: styles.color(primary, 0);
         @include styles.bpFactory($max: 800px ){flex-direction: column; margin-bottom: 500px;}
 
