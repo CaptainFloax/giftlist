@@ -45,14 +45,7 @@ export class ListComponent implements OnInit {
   }
 
   showProduct(p: any, i: number){
-    if(i > this.i){
-      this.elPList.nativeElement.scrollTo({
-        left: i* 200,
-        behavior: 'smooth'
-      });
-    }
     this.p = p;
-    this.i = i;
   }
 
   filterProducts(cat: string){
