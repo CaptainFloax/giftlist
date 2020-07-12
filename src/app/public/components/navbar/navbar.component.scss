@@ -10,6 +10,7 @@
 
     img{
         max-height: 70px;
+        @include styles.bpFactory($max: 750px){max-height: 50px;}
     }
 
     .nav{

@@ -6,6 +6,8 @@
     flex-flow: wrap;
     position: relative;
     height: calc(100% - 100px);
+    max-width: 100%;
+    @include styles.bpFactory($max: 750px){height: auto;}
 
     .header{
         margin-top: 0;
@@ -224,8 +226,6 @@
             display: flex;
             @include styles.bpFactory($max: 750px){
                 flex-direction: column;
-            }
-            @include styles.bpFactory($min: 800){
                 padding: styles.$s-o;
             }
             padding: 100px;
@@ -320,7 +320,10 @@
             
             .pf-options{
                 display: flex;
-                @include styles.bpFactory($max: 800px){min-width: 100%;}
+                flex-wrap: wrap;
+                @include styles.bpFactory($max: 800px){
+                    min-width: 100%;
+                }
                 .pfo{
                     text-align: center;
                     padding: styles.$s-o styles.$s-m;
@@ -330,6 +333,11 @@
                     border-radius: 10px;
                     cursor: pointer;
                     @include styles.addShadow(1);
+                    @include styles.bpFactory($max: 800px){
+                        max-width: 90%;
+                        min-width: 80%;
+                        margin-top: 10px;
+                    }
 
                     i{
                         font-size: 40px;
@@ -364,11 +372,12 @@
                 margin: 0 auto;
                 @include styles.bpFactory($max: 750px){
                     margin-top: styles.$s-o;
+                    width: 100%;
                 }
 
                 .form-group{
                     margin-bottom: styles.$s-o;
-                    min-width: 350px;
+                    @include styles.bpFactory($min: 750px){min-width: 350px;}
                     input, label{
                         display: block;
                         margin: 0;
@@ -465,127 +474,127 @@
             }
         }
     }
+}
 
-    .lc-products{
-        min-width: 100%;
-        max-width: 100%;
+.lc-products{
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    @include styles.bpFactory($min: 800px ){
+        display: none;
+    }
+
+    .lp-card{
+        min-width: 70% ;
+        background-color: white;
+        padding: styles.$s-m;
+        border-radius: 10px;
         display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        position: fixed;
-        bottom: 0;
-        z-index: 999;
-        @include styles.bpFactory($min: 800px ){
-            display: none;
+        margin: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+
+        &:hover{
+            cursor: pointer;
+            @include styles.addShadow(1);
         }
 
-        .lp-card{
-            min-width: 70% ;
-            background-color: white;
-            padding: styles.$s-m;
+        &.active{
+            @include styles.addShadow(1);
+            background-color: styles.color(primary, 500);
+            .pc-content .pcc-text{
+                .ct-name{
+                    color: white;
+                }
+            }
+        }
+
+        @each $key, $value in styles.$categories{
+            .#{$key}{
+                background: styles.colorcat($key, 100);
+                color: styles.colorcat($key, 500);
+            }
+        }
+
+        .pc-cat{
+            height: 50px;
+            width: 50px;
             border-radius: 10px;
-            display: flex;
-            margin: 10px;
-            flex-direction: column;
-            justify-content: flex-start;
-            position: relative;
 
-            &:hover{
+            i{
+                font-size: 20px;
+                margin: 15px 0 0 15px;
+            }
+        }
+
+        .pc-content{
+            margin: 10px 0;
+            width: 100%;
+            flex: 1;
+
+            .pcc-text{
+                min-width: 150px;
+
+                .ct-index{
+                    color: styles.color(primary, 200);
+                    margin-bottom: 5px;
+                    span{
+                        font-size: 35px;;
+                    }
+                }
+
+                .ct-name{
+                    margin: 0;
+                    margin-bottom: 5px;
+                    color: styles.color(neutral, 800);
+                    font-weight: 600;
+                    font-size: 25px;
+                }
+            }
+        }
+        .pcc-show{
+            text-align: center;
+            .btn{
                 cursor: pointer;
-                @include styles.addShadow(1);
-            }
+                padding: 5px 10px;
+                border: 0;
+                font-weight: 500;
+                font-size: 0.8em;
+                border-radius: 20px;
 
-            &.active{
-                @include styles.addShadow(1);
-                background-color: styles.color(primary, 500);
-                .pc-content .pcc-text{
-                    .ct-name{
-                        color: white;
-                    }
+                &.btn-show{
+                    background-color: styles.color(accent, 200);
+                    color: styles.color(accent, 700);
                 }
             }
 
-            @each $key, $value in styles.$categories{
-                .#{$key}{
-                    background: styles.colorcat($key, 100);
-                    color: styles.colorcat($key, 500);
-                }
-            }
+        }
+        .pcc-actions{
+            margin-top: auto;
+            text-align: right;
+            .btn{
+                padding: 8px 15px;
+                border: 0;
+                font-weight: 500;
+                font-size: 0.8em;
 
-            .pc-cat{
-                height: 50px;
-                width: 50px;
-                border-radius: 10px;
-
-                i{
-                    font-size: 20px;
-                    margin: 15px 0 0 15px;
-                }
-            }
-
-            .pc-content{
-                margin: 10px 0;
-                width: 100%;
-                flex: 1;
-
-                .pcc-text{
-                    min-width: 150px;
-
-                    .ct-index{
-                        color: styles.color(primary, 200);
-                        margin-bottom: 5px;
-                        span{
-                            font-size: 35px;;
-                        }
-                    }
-
-                    .ct-name{
-                        margin: 0;
-                        margin-bottom: 5px;
-                        color: styles.color(neutral, 800);
-                        font-weight: 600;
-                        font-size: 25px;
-                    }
-                }
-            }
-            .pcc-show{
-                text-align: center;
-                .btn{
-                    cursor: pointer;
-                    padding: 5px 10px;
-                    border: 0;
-                    font-weight: 500;
-                    font-size: 0.8em;
-                    border-radius: 20px;
-
-                    &.btn-show{
-                        background-color: styles.color(accent, 200);
-                        color: styles.color(accent, 700);
-                    }
+                &.btn-primary{
+                    background-color: styles.color(accent, 100);
+                    color: styles.color(accent, 600);
                 }
 
-            }
-            .pcc-actions{
-                margin-top: auto;
-                text-align: right;
-                .btn{
-                    padding: 8px 15px;
-                    border: 0;
-                    font-weight: 500;
-                    font-size: 0.8em;
+                &.btn-success{
+                    background-color: styles.colorstates(success, 100);
+                    color: styles.colorstates(success, 600);
 
-                    &.btn-primary{
-                        background-color: styles.color(accent, 100);
-                        color: styles.color(accent, 600);
-                    }
-
-                    &.btn-success{
-                        background-color: styles.colorstates(success, 100);
-                        color: styles.colorstates(success, 600);
-
-                        i{
-                            vertical-align: middle;
-                        }
+                    i{
+                        vertical-align: middle;
                     }
                 }
             }

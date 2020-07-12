@@ -80,14 +80,14 @@
             </div>
         </ng-template>
     </section>
-    <section class="lc-products" #productsList>
-        <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
-            <div class="pc-content">
-                <div class="pcc-text">
-                    <p class="ct-index"><span>{{i}}</span> {{product.cat}}</p>
-                    <p class="ct-name">{{product.name}}</p>
-                </div>
+</div>
+<section class="lc-products" #productsList>
+    <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
+        <div class="pc-content">
+            <div class="pcc-text">
+                <p class="ct-index"><span>{{i}}</span> {{product.cat}}</p>
+                <p class="ct-name">{{product.name}}</p>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>

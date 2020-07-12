@@ -46,6 +46,12 @@ html > *, body > * {
       flex-flow: wrap;
   position: relative;
   height: calc(100% - 100px);
+  max-width: 100%;
+}
+@media only screen and (max-width: 750px) {
+  .list-container {
+    height: auto;
+  }
 }
 .list-container .header {
   margin-top: 0;
@@ -281,10 +287,6 @@ html > *, body > * {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-}
-@media only screen and (min-width: 800) {
-  .list-container .lc-content .c-pinfos {
     padding: 32px;
   }
 }
@@ -407,6 +409,8 @@ html > *, body > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media only screen and (max-width: 800px) {
   .list-container .lc-content .c-pform .pf-options {
@@ -423,6 +427,13 @@ html > *, body > * {
   cursor: pointer;
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
           box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+}
+@media only screen and (max-width: 800px) {
+  .list-container .lc-content .c-pform .pf-options .pfo {
+    max-width: 90%;
+    min-width: 80%;
+    margin-top: 10px;
+  }
 }
 .list-container .lc-content .c-pform .pf-options .pfo i {
   font-size: 40px;
@@ -454,11 +465,16 @@ html > *, body > * {
 @media only screen and (max-width: 750px) {
   .list-container .lc-content .c-pform .pf-inputs {
     margin-top: 32px;
+    width: 100%;
   }
 }
 .list-container .lc-content .c-pform .pf-inputs .form-group {
   margin-bottom: 32px;
-  min-width: 350px;
+}
+@media only screen and (min-width: 750px) {
+  .list-container .lc-content .c-pform .pf-inputs .form-group {
+    min-width: 350px;
+  }
 }
 .list-container .lc-content .c-pform .pf-inputs .form-group input, .list-container .lc-content .c-pform .pf-inputs .form-group label {
   display: block;
@@ -563,7 +579,8 @@ html > *, body > * {
 .list-container .lc-content .c-feedback .btn i {
   vertical-align: middle;
 }
-.list-container .lc-products {
+
+.lc-products {
   min-width: 100%;
   max-width: 100%;
   display: -webkit-box;
@@ -576,11 +593,11 @@ html > *, body > * {
   z-index: 999;
 }
 @media only screen and (min-width: 800px) {
-  .list-container .lc-products {
+  .lc-products {
     display: none;
   }
 }
-.list-container .lc-products .lp-card {
+.lc-products .lp-card {
   min-width: 70%;
   background-color: white;
   padding: 16px;
@@ -598,84 +615,84 @@ html > *, body > * {
           justify-content: flex-start;
   position: relative;
 }
-.list-container .lc-products .lp-card:hover {
+.lc-products .lp-card:hover {
   cursor: pointer;
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
           box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
 }
-.list-container .lc-products .lp-card.active {
+.lc-products .lp-card.active {
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
           box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
   background-color: #324ecd;
 }
-.list-container .lc-products .lp-card.active .pc-content .pcc-text .ct-name {
+.lc-products .lp-card.active .pc-content .pcc-text .ct-name {
   color: white;
 }
-.list-container .lc-products .lp-card .bath {
+.lc-products .lp-card .bath {
   background: #eff5f1;
   color: #629d70;
 }
-.list-container .lc-products .lp-card .security {
+.lc-products .lp-card .security {
   background: #f9eceb;
   color: #c73f38;
 }
-.list-container .lc-products .lp-card .dodo {
+.lc-products .lp-card .dodo {
   background: #fae6ff;
   color: #cf03fc;
 }
-.list-container .lc-products .lp-card .games {
+.lc-products .lp-card .games {
   background: #f3f2f2;
   color: #83807c;
 }
-.list-container .lc-products .lp-card .meal {
+.lc-products .lp-card .meal {
   background: #eff5f3;
   color: #629d88;
 }
-.list-container .lc-products .lp-card .clothes {
+.lc-products .lp-card .clothes {
   background: #f5f4ef;
   color: #9d8e62;
 }
-.list-container .lc-products .lp-card .others {
+.lc-products .lp-card .others {
   background: #f5f2ef;
   color: #9d7a62;
 }
-.list-container .lc-products .lp-card .pc-cat {
+.lc-products .lp-card .pc-cat {
   height: 50px;
   width: 50px;
   border-radius: 10px;
 }
-.list-container .lc-products .lp-card .pc-cat i {
+.lc-products .lp-card .pc-cat i {
   font-size: 20px;
   margin: 15px 0 0 15px;
 }
-.list-container .lc-products .lp-card .pc-content {
+.lc-products .lp-card .pc-content {
   margin: 10px 0;
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-.list-container .lc-products .lp-card .pc-content .pcc-text {
+.lc-products .lp-card .pc-content .pcc-text {
   min-width: 150px;
 }
-.list-container .lc-products .lp-card .pc-content .pcc-text .ct-index {
+.lc-products .lp-card .pc-content .pcc-text .ct-index {
   color: #d6dcf5;
   margin-bottom: 5px;
 }
-.list-container .lc-products .lp-card .pc-content .pcc-text .ct-index span {
+.lc-products .lp-card .pc-content .pcc-text .ct-index span {
   font-size: 35px;
 }
-.list-container .lc-products .lp-card .pc-content .pcc-text .ct-name {
+.lc-products .lp-card .pc-content .pcc-text .ct-name {
   margin: 0;
   margin-bottom: 5px;
   color: #414558;
   font-weight: 600;
   font-size: 25px;
 }
-.list-container .lc-products .lp-card .pcc-show {
+.lc-products .lp-card .pcc-show {
   text-align: center;
 }
-.list-container .lc-products .lp-card .pcc-show .btn {
+.lc-products .lp-card .pcc-show .btn {
   cursor: pointer;
   padding: 5px 10px;
   border: 0;
@@ -683,28 +700,28 @@ html > *, body > * {
   font-size: 0.8em;
   border-radius: 20px;
 }
-.list-container .lc-products .lp-card .pcc-show .btn.btn-show {
+.lc-products .lp-card .pcc-show .btn.btn-show {
   background-color: #fee2cd;
   color: #af4e04;
 }
-.list-container .lc-products .lp-card .pcc-actions {
+.lc-products .lp-card .pcc-actions {
   margin-top: auto;
   text-align: right;
 }
-.list-container .lc-products .lp-card .pcc-actions .btn {
+.lc-products .lp-card .pcc-actions .btn {
   padding: 8px 15px;
   border: 0;
   font-weight: 500;
   font-size: 0.8em;
 }
-.list-container .lc-products .lp-card .pcc-actions .btn.btn-primary {
+.lc-products .lp-card .pcc-actions .btn.btn-primary {
   background-color: #fef1e6;
   color: #c85904;
 }
-.list-container .lc-products .lp-card .pcc-actions .btn.btn-success {
+.lc-products .lp-card .pcc-actions .btn.btn-success {
   background-color: #e6fff7;
   color: #00cc88;
 }
-.list-container .lc-products .lp-card .pcc-actions .btn.btn-success i {
+.lc-products .lp-card .pcc-actions .btn.btn-success i {
   vertical-align: middle;
 }
