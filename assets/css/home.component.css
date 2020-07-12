@@ -120,6 +120,11 @@ html > *, body > * {
   z-index: 1;
   font-weight: 800;
 }
+@media only screen and (max-width: 750px) {
+  .home-container .h-content .hero .h-content .hc-title {
+    font-size: 4em;
+  }
+}
 .home-container .h-content .hero .h-content .hc-text {
   max-width: 500px;
   font-size: 1.1rem;

@@ -55,6 +55,7 @@
     
                 .hc-title{
                     font-size: 6em;
+                    @include styles.bpFactory($max: 750px){font-size: 4em;}
                     margin-bottom: 0;
                     color: styles.color(accent, 900);
                     z-index: 1;

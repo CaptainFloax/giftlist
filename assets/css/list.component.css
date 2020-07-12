@@ -301,6 +301,7 @@ html > *, body > * {
 }
 .list-container .lc-content .c-pinfos .cpi-imgcontainer .cpi-img {
   max-height: 300px;
+  max-width: 100%;
   width: auto;
   margin-right: 20px;
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);

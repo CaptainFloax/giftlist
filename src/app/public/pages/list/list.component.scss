@@ -244,6 +244,7 @@
 
                 .cpi-img{
                     max-height: 300px;
+                    max-width: 100%;
                     width: auto;
                     margin-right: 20px;
                     @include styles.addShadow(1);
