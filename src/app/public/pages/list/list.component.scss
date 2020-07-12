@@ -433,6 +433,7 @@
             height: 100%;
             background-color: #33333313;
             z-index: 2;
+            @include styles.bpFactory($max: 800px){align-items: start;padding-top: 20px;}
 
             .f-modal{
                 background: white;
