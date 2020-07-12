@@ -68,8 +68,15 @@
         </div>
         <ng-template #offered>
             <div class="c-feedback">
-                <img class="cf-img" src="../../../assets/graphics/illu/03.svg" alt=""/>
-                <p class="cf-text">Ce produit a déjà été offert ! Vous ne trouvez pas votre bonheur dans la liste ? Envoyez nous un <a routerLink="/contact">message</a> pour savoir ce qui nous ferait plaisir !</p>
+                <div class="f-modal">
+                    <img class="cf-img" src="../../../assets/graphics/illu/03.svg" alt=""/>
+                    <p class="cf-title">
+                        Ce produit a déjà été offert !
+                    </p>
+                    <p class="cf-text"> Vous ne trouvez pas votre bonheur dans la liste ? Envoyez nous un message pour savoir ce qui nous ferait plaisir !</p>
+                    <button class="btn" routerLink="/contact">Nous contacter</button>
+                </div>
+                
             </div>
         </ng-template>
         <!--<div class="lcc-infos">

@@ -216,6 +216,7 @@
         flex: 5;
         min-width: 60%;
         max-height: 100%;
+        position: relative;
         background-color: styles.color(primary, 0);
         @include styles.bpFactory($max: 800px ){flex-direction: column; margin-bottom: 500px;}
 
@@ -416,16 +417,45 @@
         }
 
         .c-feedback{
-            margin: styles.$s-o auto;
-            max-width: 500px;
             text-align: center;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #33333313;
+            z-index: 2;
+
+            .f-modal{
+                background: white;
+                max-width: 500px;
+                padding: 20px;
+                border-radius: 10px;
+                @include styles.addShadow(1);
+
+            }
 
             .cf-img{
                 max-width: 200px;
             }
 
-            .cf-text{
+            .cf-title{
                 font-weight: 800;
+                font-size: 20px;
+            }
+
+            .cf-text{
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+            .btn{
+                @include styles.resetBtn();
+                background-color: styles.color(secondary, 500);
+                color: styles.color(secondary, 0);
             }
         }
 

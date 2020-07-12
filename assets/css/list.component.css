@@ -256,6 +256,7 @@ html > *, body > * {
           flex: 5;
   min-width: 60%;
   max-height: 100%;
+  position: relative;
   background-color: #f7f8fd;
   /*
   .lcc-infos{
@@ -543,15 +544,51 @@ html > *, body > * {
   background-color: #fff9f5;
 }
 .list-container .lc-content .c-feedback {
-  margin: 32px auto;
-  max-width: 500px;
   text-align: center;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #33333313;
+  z-index: 2;
+}
+.list-container .lc-content .c-feedback .f-modal {
+  background: white;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+          box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
 }
 .list-container .lc-content .c-feedback .cf-img {
   max-width: 200px;
 }
-.list-container .lc-content .c-feedback .cf-text {
+.list-container .lc-content .c-feedback .cf-title {
   font-weight: 800;
+  font-size: 20px;
+}
+.list-container .lc-content .c-feedback .cf-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+.list-container .lc-content .c-feedback .btn {
+  border: none;
+  padding: 5px 10px;
+  background-color: #1d90e2;
+  color: #f6fbfe;
+}
+.list-container .lc-content .c-feedback .btn i {
+  vertical-align: middle;
 }
 .list-container .lc-products {
   min-width: 100%;
