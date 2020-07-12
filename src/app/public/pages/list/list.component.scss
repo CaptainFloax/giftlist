@@ -218,7 +218,7 @@
         max-height: 100%;
         position: relative;
         background-color: styles.color(primary, 0);
-        @include styles.bpFactory($max: 800px ){flex-direction: column; margin-bottom: 500px;}
+        @include styles.bpFactory($max: 800px ){flex-direction: column; padding-bottom: 300px;}
 
         .c-pinfos{
             display: flex;
@@ -229,6 +229,7 @@
                 padding: styles.$s-o;
             }
             padding: 100px;
+            padding-bottom: 20px;
 
             .cpi-imgcontainer{
                 position: relative;
@@ -300,10 +301,13 @@
             display: flex;
             align-items:flex-start;
             align-content:flex-start;
+            flex-wrap: wrap;
+
+            @include styles.bpFactory($max: 800px ){flex-direction: column; padding-bottom: 200px;}
 
             h2{
-                margin: 0;
-                margin-left: styles.$s-o;
+                margin: styles.$s-o;
+                min-width: 100%;
             }
 
             @include styles.bpFactory($max: 750px){
@@ -316,6 +320,7 @@
             
             .pf-options{
                 display: flex;
+                @include styles.bpFactory($max: 800px){min-width: 100%;}
                 .pfo{
                     text-align: center;
                     padding: styles.$s-o styles.$s-m;
@@ -458,59 +463,6 @@
                 color: styles.color(secondary, 0);
             }
         }
-
-        /*
-        .lcc-infos{
-            color: styles.color(neutral, 600);
-            padding: styles.$s-o;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            .i-btn{
-                @include styles.resetBtn();
-                background-color: styles.color(accent, 500);
-                border-radius: 20px;
-                padding: 5px 15px;
-                padding-left: 5px;
-                font-size: 18px;
-                color: styles.color(accent, 0);
-
-                &:hover{
-                    cursor: pointer;
-                    i{
-                        transform: scale(0.9);
-                    }
-                    
-                }
-
-                i{
-                    transition: ease-in 200ms;
-                    border-radius: 20px;
-                    padding: 5px;
-                    margin-right: 10px;
-                    font-size: 20px;
-                    color: styles.color(accent, 600);
-                    background-color: styles.color(accent, 0);
-                }
-            }
-        }
-        
-        .lcc-visuel{
-            flex: 1;
-            max-width: 50%;
-            max-height: 600px;
-            margin-top: styles.$s-o;
-            background-color: styles.color(neutral, 200) !important;
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            position: relative;
-            z-index: 5;
-            @include styles.bpFactory($max: 800px ){max-width: 100%;flex-order:1}
-        }
-        */
     }
 
     .lc-products{
@@ -521,13 +473,13 @@
         scroll-behavior: smooth;
         position: fixed;
         bottom: 0;
+        z-index: 999;
         @include styles.bpFactory($min: 800px ){
             display: none;
         }
 
         .lp-card{
-            min-height: 120px;
-            width: 150px;
+            min-width: 70% ;
             background-color: white;
             padding: styles.$s-m;
             border-radius: 10px;

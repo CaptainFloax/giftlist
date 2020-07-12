@@ -79,15 +79,6 @@
                 
             </div>
         </ng-template>
-        <!--<div class="lcc-infos">
-            <p class="i-cat c-{{p.tag}}">{{p.cat}}</p>
-            <h2 class="i-name">{{p.name}}</h2>
-            <p class="i-desc">{{p.description}}</p>
-            <p class="i-price">{{p.price}}€ - {{p.shop}}</p>
-            <button class="i-btn" routerLink="basket"><i class="eva eva-flash-outline"></i> Je veux l'offrir</button>
-        </div>
-        <div class="lcc-visuel" [style.background]="'url(../../../../assets/photos/' + p.img + ')'">
-        </div>-->
     </section>
     <section class="lc-products" #productsList>
         <div [class.active]="product == p" (click)="showProduct(product,i)" class="lp-card" *ngFor="let product of fp; let i = index">
@@ -96,9 +87,6 @@
                     <p class="ct-index"><span>{{i}}</span> {{product.cat}}</p>
                     <p class="ct-name">{{product.name}}</p>
                 </div>
-            </div>
-            <div class="pcc-show">
-                <button (click)="showProduct(product, i)" class="btn btn-show">Afficher</button>
             </div>
         </div>
     </section>
