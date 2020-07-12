@@ -22,6 +22,7 @@
             background-color: white;
             padding: 20px;
             text-align: center;
+            @include styles.addShadow(1);
 
             .form-icon{
                 font-size: 80px;
