@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  // FORM INPUTS
+  msg: any = {
+    "name": "",
+    "email": "",
+    "msg": ""
+  }
 
   titles: any = [
     'Nous écrire',

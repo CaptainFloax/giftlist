@@ -1,5 +1,64 @@
 @use '../../../../styles.scss';
 
 .contact-container{
-    padding: styles.$s-o;
+    display: flex;
+    height: calc(100% - 100px);
+
+    .sep{
+        flex: 1;
+        background: url('../../../../assets/photos/contact.jpg');
+        background-size: cover;
+    }
+
+    .content{
+        padding: styles.$s-o;
+        flex: 2;
+        background-color: styles.color(primary, 0);
+
+        .form{
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+
+            .form-icon{
+                font-size: 80px;
+                color: styles.color(primary, 500);
+            }
+            .form-group{
+                text-align: left;
+                margin-bottom: styles.$s-o;
+                input, label, textarea{
+                    display: block;
+                    margin: 0 auto;
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                label{
+                    font-size: 0.9em;
+                    color: styles.color(neutral, 400);
+                    font-weight: 400;
+                }
+
+                input, textarea{
+                    margin-top: 3px;
+                    border: none;
+                    padding: styles.$s-a;
+                    border: 1px solid styles.color(neutral, 100);
+                }
+            }
+
+            .btn-submit{
+                margin: 0 auto;
+                @include styles.resetBtn();
+                background-color: styles.color(primary, 500);
+                color: styles.color(primary, 0);
+                font-weight: 800;
+                padding: 8px 15px;
+            }
+        }
+    }
 }
