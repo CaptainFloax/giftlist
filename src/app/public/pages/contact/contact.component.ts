@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -18,9 +20,13 @@ export class ContactComponent implements OnInit {
     'Laisser nous un petit mot, ou adressez nous vos bons conseils pour survivre à l\'arrivée d\'un petit être'
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  sendContact(){
+    this.http.post(environment._apiurl + "/contact", this.msg).subscribe((data) => { });
   }
 
 }

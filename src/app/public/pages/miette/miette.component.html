@@ -23,6 +23,9 @@
     <div class="content">
         <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
         <div class="form">
+            <div class="error" *ngIf="isSend">
+                Votre pronostic a bien été envoyé !
+            </div>
             <div class="form-avatar">
                 <label>
                     <input type="radio" id="baby01" value="baby-01.jpeg" [(ngModel)]="miette.avatar"/>
@@ -91,7 +94,7 @@
                 <label for="name">Pronostic de</label>
                 <input [(ngModel)]="miette.from" name="from" placeholder="Entrez votre nom"/>
             </div>
-            <button class="btn-submit">Envoyer le prono !</button>
+            <button class="btn-submit" (click)="sendProno()">Envoyer le prono !</button>
         </div>
     </div>
 </div>

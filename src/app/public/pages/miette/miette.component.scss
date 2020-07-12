@@ -80,6 +80,13 @@
             text-align: center;
             @include styles.addShadow(1);
 
+            .error{
+                padding: 20px;
+                background-color: styles.colorstates(success, 200);
+                color: styles.colorstates(success, 800);
+                margin: 15px 0;
+            }
+
             .form-avatar{
                 text-align: left;
                 margin-bottom: 10px;

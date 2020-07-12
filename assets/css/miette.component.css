@@ -134,6 +134,12 @@ html > *, body > * {
   -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
           box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
 }
+.miette-container .content .form .error {
+  padding: 20px;
+  background-color: #ccffee;
+  color: #009966;
+  margin: 15px 0;
+}
 .miette-container .content .form .form-avatar {
   text-align: left;
   margin-bottom: 10px;
