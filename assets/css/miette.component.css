@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: light;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Roboto Light"), url("src/assets/fonts/roboto-light.woff2") format("woff2"), url("src/assets/fonts/roboto-light.woff") format("woff"), url("src/assets/fonts/roboto-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: book;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), url("src/assets/fonts/roboto-regular.woff2") format("woff2"), url("src/assets/fonts/roboto-regular.woff") format("woff"), url("src/assets/fonts/roboto-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: regular;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Roboto Medium"), url("src/assets/fonts/roboto-medium.woff2") format("woff2"), url("src/assets/fonts/roboto-medium.woff") format("woff"), url("src/assets/fonts/roboto-medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: bbold;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), url("src/assets/fonts/roboto-bold.woff2") format("woff2"), url("src/assets/fonts/roboto-bold.woff") format("woff"), url("src/assets/fonts/roboto-bold.ttf") format("truetype");
+}
+html, body {
+  background-color: #f9f9fb;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+html > *, body > * {
+  font-family: Roboto, Helvetica, sans-serif !important;
+  font-size: 16px;
+}
+
+.miette-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 100px);
+}
+@media only screen and (max-width: 800px) {
+  .miette-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.miette-container .sep {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background: url("../../../../assets/photos/miette.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.miette-container .sep .profil-card {
+  background-color: white;
+  width: 250px;
+  margin: 20px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 5px;
+}
+.miette-container .sep .profil-card .pc-img {
+  margin: 10px auto;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  background-image: url("../../../../assets/photos/baby-01.jpeg");
+  background-size: cover !important;
+  background-position: center center !important;
+}
+.miette-container .sep .profil-card .pc-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #575c75;
+}
+.miette-container .sep .profil-card .pc-genre {
+  padding: 5px 10px;
+  margin: 5px auto;
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: #fde8ec;
+  color: #a30f2d;
+  display: inline-block;
+}
+.miette-container .sep .profil-card .pc-dim {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px auto;
+}
+.miette-container .sep .profil-card .pc-dim .pc-weight, .miette-container .sep .profil-card .pc-dim .pc-height {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #575c75;
+}
+.miette-container .sep .profil-card .pc-birth, .miette-container .sep .profil-card .pc-look {
+  color: #575c75;
+  margin: 10px 0;
+}
+.miette-container .content {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding: 32px;
+  max-height: calc(100% - 100px);
+  overflow-x: scroll;
+}
+.miette-container .content .form {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  -webkit-box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+          box-shadow: 2px 0 16px rgba(26, 26, 26, 0.05);
+}
+.miette-container .content .form .form-avatar {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.miette-container .content .form .form-avatar [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.miette-container .content .form .form-avatar [type=radio] + img {
+  cursor: pointer;
+  height: 70px;
+  margin-left: 10px;
+}
+.miette-container .content .form .form-avatar [type=radio]:checked + img {
+  outline: 2px solid #fa6f05;
+}
+.miette-container .content .form .form-group {
+  text-align: left;
+  margin-bottom: 32px;
+}
+.miette-container .content .form .form-group input, .miette-container .content .form .form-group label, .miette-container .content .form .form-group select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+}
+.miette-container .content .form .form-group label {
+  font-size: 0.9em;
+  color: #c4c7d4;
+  font-weight: 400;
+}
+.miette-container .content .form .form-group input, .miette-container .content .form .form-group select {
+  margin-top: 3px;
+  border: none;
+  padding: 8px;
+  border: 1px solid #f0f1f4;
+}
+.miette-container .content .form .dim-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.miette-container .content .form .dim-inputs .weight {
+  margin-right: 20px;
+}
+.miette-container .content .form .btn-submit {
+  margin: 0 auto;
+  border: none;
+  padding: 5px 10px;
+  background-color: #324ecd;
+  color: #f7f8fd;
+  font-weight: 800;
+  padding: 8px 15px;
+}
+.miette-container .content .form .btn-submit i {
+  vertical-align: middle;
+}

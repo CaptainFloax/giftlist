@@ -1,5 +1,144 @@
 @use '../../../../styles.scss';
 
 .miette-container{
-    padding: styles.$s-o;
+    display: flex;
+    height: calc(100% - 100px);
+    @include styles.bpFactory($max: 800px){flex-direction: column;}
+
+    .sep{
+        flex: 2;
+        background: url('../../../../assets/photos/miette.jpg');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .profil-card{
+            background-color: white;
+            width: 250px;
+            margin: 20px;
+            padding: styles.$s-m;
+            text-align: center;
+            border-radius: 5px;
+
+            .pc-img {
+                margin: 10px auto;
+                height: 70px;
+                width: 70px;
+                border-radius: 50px;
+                background-image: url('../../../../assets/photos/baby-01.jpeg');
+                background-size: cover !important;
+                background-position: center center !important;
+            }
+
+            .pc-name{
+                font-size: 18px;
+                font-weight: 700;
+                color: styles.color(neutral, 600);
+            }
+
+            .pc-genre{
+                padding: 5px 10px;
+                margin: 5px auto;
+                border-radius: 3px;
+                font-size: 14px;
+                background-color: styles.color(tertiary, 100);
+                color: styles.color(tertiary, 700);
+                display: inline-block;
+            }
+
+            .pc-dim{
+                display: flex;
+                margin: 15px auto;
+
+                .pc-weight, .pc-height{
+                    flex: 1;
+                    color: styles.color(neutral, 600);
+                }
+            }
+
+            .pc-birth, .pc-look{
+                color: styles.color(neutral, 600);
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .content{
+        flex: 3;
+        padding: styles.$s-o;
+        max-height: calc(100% - 100px);
+        overflow-x: scroll;
+
+        .form{
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            @include styles.addShadow(1);
+
+            .form-avatar{
+                text-align: left;
+                margin-bottom: 10px;
+                [type=radio]{
+                    position: absolute;
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+                [type=radio] + img {
+                    cursor: pointer;
+                    height: 70px;
+                    margin-left: 10px;
+                }
+
+                [type=radio]:checked + img {
+                    outline: 2px solid styles.color(accent, 500);
+                  }
+            }
+
+            .form-group{
+                text-align: left;
+                margin-bottom: styles.$s-o;
+                input, label, select{
+                    display: block;
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                label{
+                    font-size: 0.9em;
+                    color: styles.color(neutral, 400);
+                    font-weight: 400;
+                }
+
+                input, select{
+                    margin-top: 3px;
+                    border: none;
+                    padding: styles.$s-a;
+                    border: 1px solid styles.color(neutral, 100);
+                }
+            }
+
+            .dim-inputs{
+                display: flex;
+
+                .weight{
+                    margin-right: 20px;
+                }
+            }
+
+            .btn-submit{
+                margin: 0 auto;
+                @include styles.resetBtn();
+                background-color: styles.color(primary, 500);
+                color: styles.color(primary, 0);
+                font-weight: 800;
+                padding: 8px 15px;
+            }
+        }
+    }
 }

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     },
     {
       illu: 'home_03.svg',
-      title: 'Vous voulez participer aux pronostiques ?',
+      title: 'Vous voulez participer aux pronostics ?',
       text : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare aenean tempor, pharetra ullamcorper non. Euismod.',
       link: {
         label: 'Participer',
