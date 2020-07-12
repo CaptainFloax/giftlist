@@ -44,12 +44,26 @@ html > *, body > * {
   display: flex;
   height: calc(100% - 100px);
 }
+@media only screen and (max-width: 800px) {
+  .contact-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .contact-container .sep {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   background: url("../../../../assets/photos/contact.jpg");
   background-size: cover;
+  background-position: center center;
+}
+@media only screen and (max-width: 800px) {
+  .contact-container .sep {
+    min-height: 50%;
+  }
 }
 .contact-container .content {
   padding: 32px;

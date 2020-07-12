@@ -3,11 +3,14 @@
 .contact-container{
     display: flex;
     height: calc(100% - 100px);
+    @include styles.bpFactory($max: 800px){flex-direction: column;}
 
     .sep{
         flex: 1;
         background: url('../../../../assets/photos/contact.jpg');
         background-size: cover;
+        background-position: center center;
+        @include styles.bpFactory($max: 800px){min-height: 50%;}
     }
 
     .content{
