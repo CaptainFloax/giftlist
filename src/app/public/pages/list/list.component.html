@@ -21,7 +21,7 @@
                 <div class="p-img" [style.background]="'url(../../../../assets/photos/' + product.img + ')'"></div>
                 <div class="p-infos">
                     <p class="pi-name">{{product.name}}</p>
-                    <p class="pi-cat c-{{product.tag}}">{{product.cat}}</p>
+                    <p class="pi-cat" [class.dispo]="product.isBought"><i class="uil uil-check"></i>Offert</p>
                 </div>
             </div>
         </div>

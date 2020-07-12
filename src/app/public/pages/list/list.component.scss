@@ -35,7 +35,7 @@
     }
     
     .lc-hero{
-        flex: 1;
+        flex: 2;
         height: 100%;
         overflow: scroll;
         overflow-x: hidden;
@@ -195,12 +195,12 @@
                         font-size: 14px;
                         border-radius: 5px;
                         text-transform: uppercase;
-                        display: inline-block;
-                        @each $key, $value in styles.$categories{
-                            &.c-#{$key}{
-                                color: styles.colorcat($key, 600);
-                                background-color: styles.colorcat($key, 200);
-                            }
+                        display: none;
+                        color: styles.colorcat(bath, 700);
+                        background-color: styles.colorcat(bath, 200);
+
+                        &.dispo{
+                            display: inline-block;
                         }
                     }
                 }
