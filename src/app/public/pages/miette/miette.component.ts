@@ -47,7 +47,7 @@ export class MietteComponent implements OnInit {
   }
 
   sendProno(){
-    //this.http.post(environment._apiurl + "/prono", this.miette).subscribe((data) => { });
+    this.http.post(environment._apiurl + "/prono", this.miette).subscribe((data) => { });
     this.isSend = true;
     this.resetProno();
   }
