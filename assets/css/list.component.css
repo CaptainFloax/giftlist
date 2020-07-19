@@ -262,6 +262,7 @@ html > *, body > * {
           flex: 5;
   min-width: 60%;
   max-height: 100%;
+  overflow: scroll;
   position: relative;
   background-color: #f7f8fd;
 }

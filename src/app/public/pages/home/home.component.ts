@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       text : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare aenean tempor, pharetra ullamcorper non. Euismod.',
       link: {
         label: 'Accéder à la cagnotte',
-        tag: 'cagnotte'
+        tag: 'https://paypal.me/mellovds'
       }
     }
   ];
