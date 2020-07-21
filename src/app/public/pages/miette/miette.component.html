@@ -1,56 +1,57 @@
 <div class="miette-container">
     <div class="sep">
         <div class="profil-card">
-            <div class="pc-img" [style.background]="'url(../../../../assets/photos/' + miette.avatar + ')'"></div>
+            <div class="pc-img" [style.background]="'url(../../../../assets/photos/' + pronoForm.value.avatar + ')'"></div>
             <div class="pc-name">
-                {{miette.name}}
+                {{pronoForm.value.name}}
             </div>
             <div class="pc-genre">
-                {{miette.sexe}}
+                {{pronoForm.value.sexe}}
             </div>
             <div class="pc-dim">
-                <div class="pc-weight">{{miette.weight}}kg</div>
-                <div class="pc-height">{{miette.height}}cm</div>
+                <div class="pc-weight">{{pronoForm.value.weight}}kg</div>
+                <div class="pc-height">{{pronoForm.value.height}}cm</div>
             </div>
             <div class="pc-birth">
-                Né(e) le : {{miette.birth}}
+                Né(e) le : {{pronoForm.value.birth}}
             </div>
             <div class="pc-look">
-                Il/Elle ressemble le plus à {{miette.look}}
+                Il/Elle ressemble le plus à {{pronoForm.value.look}}
             </div>
         </div>
     </div>
     <div class="content">
         <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
-        <div class="form">
-            <div class="error" *ngIf="isSend">
-                Votre pronostic a bien été envoyé !
+        <form class="form"[formGroup]="pronoForm" (ngSubmit)="sendProno()">
+            <div class="error" *ngIf="error">
+                {{error}}
             </div>
             <div class="form-avatar">
                 <label>
-                    <input type="radio" id="baby01" value="baby-01.jpeg" [(ngModel)]="miette.avatar"/>
+                    <input type="radio" id="baby01" value="baby-01.jpeg" formControlName="avatar"/>
                     <img src="../../../../assets/photos/baby-01.jpeg"/>
                 </label>
                 <label>
-                    <input type="radio" id="baby01" value="baby-02.jpeg" [(ngModel)]="miette.avatar"/>
+                    <input type="radio" id="baby02" value="baby-02.jpeg" formControlName="avatar"/>
                     <img src="../../../../assets/photos/baby-02.jpeg"/>
                 </label>
                 <label>
-                    <input type="radio" id="baby01" value="baby-03.jpeg" [(ngModel)]="miette.avatar"/>
+                    <input type="radio" id="baby03" value="baby-03.jpeg" formControlName="avatar"/>
                     <img src="../../../../assets/photos/baby-03.jpeg"/>
                 </label>
                 <label>
-                    <input type="radio" id="baby01" value="batman.jpg" [(ngModel)]="miette.avatar"/>
+                    <input type="radio" id="baby04" value="batman.jpg" formControlName="avatar"/>
                     <img src="../../../../assets/photos/batman.jpg"/>
                 </label>
             </div>
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input [(ngModel)]="miette.name" name="name" placeholder="Entrez votre nom"/>
+                <input formControlName="name" name="name" placeholder="Bruce"/>
             </div>
             <div class="form-group">
                 <label for="email">Genre</label>
-                <select [(ngModel)]="miette.sexe" name="genre">
+                <select formControlName="sexe" name="genre">
+                    <option selected disabled value="">Choisir un sexe</option>
                     <option value="Garçon">Garçon</option>
                     <option value="Fille">Fille</option>
                 </select>
@@ -58,20 +59,21 @@
             <div class="dim-inputs">
                 <div class="form-group weight">
                     <label for="email">Poids (kg)</label>
-                    <input type="number" step=".01" [(ngModel)]="miette.weight" name="weight" placeholder="Entrez votre email"/>
+                    <input type="number" step=".01" formControlName="weight" name="weight" placeholder="3.0"/>
                 </div>
                 <div class="form-group">
                     <label for="email">Taille (cm)</label>
-                    <input type="number" step=".01" [(ngModel)]="miette.height" name="height" placeholder="Entrez votre email"/>
+                    <input type="number" step=".01" formControlName="height" name="height" placeholder="50"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="name">Date de naissance (JJ/MM/AAAA)</label>
-                <input [(ngModel)]="miette.birth" name="name" placeholder="Entrez la date de naissance"/>
+                <input formControlName="birth" name="name" placeholder="Entrez la date de naissance"/>
             </div>
             <div class="form-group">
                 <label for="name">Il/elle ressemble le plus à</label>
-                <select [(ngModel)]="miette.look" name="look">
+                <select formControlName="look" name="look">
+                    <option selected disabled value="">Choisir un proche</option>
                     <option value="Sa mère">Sa mère</option>
                     <option value="Son père">Son père</option>
                     <option value="Son grand-père paternel">Son grand-père paternel</option>
@@ -83,7 +85,8 @@
             </div>
             <div class="form-group">
                 <label for="name">Il/elle sera</label>
-                <select [(ngModel)]="miette.hair" name="look">
+                <select formControlName="hair" name="look">
+                    <option selected disabled value="">Choisir une couleur de cheveux</option>
                     <option value="blond">Blond</option>
                     <option value="brun">Brun</option>
                     <option value="roux">Roux</option>
@@ -92,9 +95,9 @@
             </div>
             <div class="form-group">
                 <label for="name">Pronostic de</label>
-                <input [(ngModel)]="miette.from" name="from" placeholder="Entrez votre nom"/>
+                <input formControlName="from" name="from" placeholder="Entrez votre nom"/>
             </div>
-            <button class="btn-submit" (click)="sendProno()">Envoyer le prono !</button>
-        </div>
+            <button class="btn-submit">Envoyer le prono !</button>
+        </form>
     </div>
 </div>

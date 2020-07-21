@@ -2,24 +2,27 @@
     <div class="sep"></div>
     <div class="content">
         <app-topbar [title]="titles[0]" [subtitle]="titles[1]"></app-topbar>
-        <div class="form">
+        <form [formGroup]="contactForm" class="form" (ngSubmit)="sendContact()">
             <div class="form-icon">
                 <i class="uil uil-mailbox"></i>
             </div>
+            <div class="error" *ngIf="error">
+                {{error}}
+            </div>
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input [(ngModel)]="msg.name" name="name" placeholder="Entrez votre nom"/>
+                <input formControlName="name" name="name" placeholder="Entrez votre nom"/>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input [(ngModel)]="msg.email" name="email" placeholder="Entrez votre email"/>
+                <input formControlName="email" name="email" placeholder="Entrez votre email"/>
             </div>
             <div class="form-group">
-                <label for="msg">Votre message</label>
-                <textarea [(ngModel)]="msg.msg" name="msg" placeholder="Entrez votre message"></textarea>
+                <label for="message">Votre message</label>
+                <textarea formControlName="message" name="message" placeholder="Entrez votre message"></textarea>
             </div>
-            <button class="btn-submit">Envoyer le message</button>
-        </div>
+            <button type="submit" class="btn-submit">Envoyer le message</button>
+        </form>
     </div>
     
 </div>

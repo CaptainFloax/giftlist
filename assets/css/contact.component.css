@@ -86,6 +86,12 @@ html > *, body > * {
   font-size: 80px;
   color: #324ecd;
 }
+.contact-container .content .form .error {
+  padding: 20px;
+  background-color: #ccffee;
+  color: #009966;
+  margin: 15px 0;
+}
 .contact-container .content .form .form-group {
   text-align: left;
   margin-bottom: 32px;

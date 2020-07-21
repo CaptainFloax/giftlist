@@ -14,7 +14,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { PanierComponent } from './pages/panier/panier.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { ListComponent } from './pages/list/list.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 
@@ -37,6 +37,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     CommonModule,
     PublicRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ]
 })
