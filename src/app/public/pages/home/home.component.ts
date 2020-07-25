@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     {
       illu: 'home_02.svg',
       title: 'Vous voulez nous laisser un message ?',
-      text : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare aenean tempor, pharetra ullamcorper non. Euismod.',
+      text : 'Envoyez-nous vos meilleurs conseils pour l\'arrivée d\'un petit être ou laissez-nous simplement un petit mot.',
       link: {
         label: 'Nous écrire',
         tag: 'contact'
@@ -27,18 +27,18 @@ export class HomeComponent implements OnInit {
     {
       illu: 'home_03.svg',
       title: 'Vous voulez participer aux pronostics ?',
-      text : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare aenean tempor, pharetra ullamcorper non. Euismod.',
+      text : 'Fille ou Garçon ? Grand ou Petit ? Blond ou Roux ? Devinez à qui il/elle va ressembler et son futur prénom !',
       link: {
-        label: 'Participer',
+        label: 'Jouer',
         tag: 'miette'
       }
     },
     {
       illu: 'home_04.svg',
-      title: 'Pas d’idée de cadeaux ? Participer à la cagnotte !',
-      text : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare aenean tempor, pharetra ullamcorper non. Euismod.',
+      title: 'Pas d’idée de cadeaux ? Participez à la cagnotte !',
+      text : 'Si vous souhaitez faire un geste sans forcément choisir de cadeau dans la liste, n\'hésitez pas à accéder à la cagnotte.',
       link: {
-        label: 'Accéder à la cagnotte',
+        label: 'Participer',
         tag: 'https://paypal.me/mellovds'
       }
     }

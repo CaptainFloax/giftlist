@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
 
   titles: any = [
     'Nous écrire',
-    'Laisser nous un petit mot, ou adressez nous vos bons conseils pour survivre à l\'arrivée d\'un petit être'
+    'Laissez-nous un petit mot, ou adressez-nous vos bons conseils pour survivre à l\'arrivée d\'un petit être'
   ]
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) { }

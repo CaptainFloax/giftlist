@@ -14,7 +14,7 @@ export class MietteComponent implements OnInit {
   //PROFIL MODELS
   miette: any = {
     "avatar": "baby-01.jpeg",
-    "name": "Bruce Vanderschooten",
+    "name": "Bruce",
     "sexe": "Fille",
     "weight": "3.00",
     "height": "50.00",
@@ -27,7 +27,7 @@ export class MietteComponent implements OnInit {
 
   titles: any = [
     'Notre petite miette',
-    'Créez le profil BabyBook de miette : genre, prénom, taille, poids, soyez créatifs ! Petit indice, le terme est prévu le 07/09.'
+    'Créez le profil BabyBook de miette : genre, prénom, taille, poids, soyez créatifs ! Petit indice, le terme est prévu le 07 septembre.'
   ]
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) { }

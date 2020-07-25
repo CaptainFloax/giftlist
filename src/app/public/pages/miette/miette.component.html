@@ -3,7 +3,7 @@
         <div class="profil-card">
             <div class="pc-img" [style.background]="'url(../../../../assets/photos/' + pronoForm.value.avatar + ')'"></div>
             <div class="pc-name">
-                {{pronoForm.value.name}}
+                {{pronoForm.value.name}} Vanderschooten
             </div>
             <div class="pc-genre">
                 {{pronoForm.value.sexe}}
@@ -45,8 +45,8 @@
                 </label>
             </div>
             <div class="form-group">
-                <label for="name">Nom</label>
-                <input formControlName="name" name="name" placeholder="Bruce"/>
+                <label for="name">Prénom</label>
+                <input formControlName="name" name="name" placeholder="Entrez le prénom"/>
             </div>
             <div class="form-group">
                 <label for="email">Genre</label>
